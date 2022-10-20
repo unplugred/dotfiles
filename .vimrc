@@ -18,8 +18,14 @@ set autochdir
 " wild menu
 set wildmenu
 
-" height of the command bar
+" hide unnecessary bottom bar
 set cmdheight=1
+lua vim.o.ls=0
+lua vim.o.ch=0
+
+" window title
+set title titlestring=%t\ \ %m
+set noicon
 
 " line numbers
 set nu
