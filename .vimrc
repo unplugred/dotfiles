@@ -73,8 +73,6 @@ set mouse=a
 
 " transparency
 let g:neovide_transparency=0.7
-highlight Normal guibg=none
-highlight NonText guibg=none
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
