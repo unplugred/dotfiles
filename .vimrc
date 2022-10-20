@@ -71,7 +71,13 @@ set smartcase
 " enable mouse cuz im not a nerd
 set mouse=a
 
-" neovide settings
+" transparency
 let g:neovide_transparency=0.7
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
+" neovide settings
 let g:neovide_remember_window_size=v:true
 let g:neovide_hide_mouse_when_typing=v:true
