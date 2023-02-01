@@ -76,6 +76,8 @@ set smartcase
 
 " enable mouse cuz im not a nerd
 set mouse=a
+aunmenu PopUp.How-to\ disable\ mouse
+aunmenu PopUp.-1-
 
 " transparency
 let g:neovide_transparency=0.7
