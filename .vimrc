@@ -87,3 +87,13 @@ highlight NonText ctermbg=none
 " neovide settings
 let g:neovide_remember_window_size=v:true
 let g:neovide_hide_mouse_when_typing=v:true
+
+" cygwin on windows
+if has("win32")
+	let $CHERE_INVOKING=1
+	set shell=C:/cygwin64/bin/zsh.exe
+	set shellcmdflag=--login\ -c
+	set shellxquote=\"
+	set shellslash
+	let $PATH .= ';C:\cygwin64\bin'
+endif
