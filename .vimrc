@@ -10,6 +10,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'ap/vim-css-color'
 " color theme that ill eventually grow out of
 Plug 'junegunn/seoul256.vim'
+" git diff
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 " root directory to current file
