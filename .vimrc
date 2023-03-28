@@ -95,10 +95,10 @@ let g:neovide_cursor_vfx_mode = "pixiedust"
 let g:neovide_cursor_vfx_particle_density = 12.0
 let g:neovide_cursor_vfx_particle_lifetime = 0.6
 
-" cygwin on windows
+" zsh
+set shell=zsh
 if has("win32")
 	let $CHERE_INVOKING=1
-	set shell=C:/cygwin64/bin/zsh.exe
 	set shellcmdflag=--login\ -c
 	set shellxquote=\"
 	set shellslash
