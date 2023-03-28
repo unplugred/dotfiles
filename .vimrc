@@ -44,6 +44,26 @@ set list
 set guifont=3270Narrow\ NF:h14
 set encoding=UTF-8
 
+" zoom hotkeys
+let g:neovide_scale_factor=1.0
+function! ChangeScaleFactor(delta)
+  let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
+endfunction
+nnoremap <expr><C-ScrollWheelUp> ChangeScaleFactor(1.05)
+nnoremap <expr><C-ScrollWheelDown> ChangeScaleFactor(1/1.05)
+
+" transparency
+let g:neovide_transparency=0.7
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
+" transparency hotkeys
+function! ChangeTransparency(delta)
+  let g:neovide_transparency = g:neovide_transparency + a:delta
+endfunction
+noremap <expr><C-S-ScrollWheelUp> ChangeTransparency(0.02)
+noremap <expr><C-S-ScrollWheelDown> ChangeTransparency(-0.02)
+
 " spell check
 setlocal spell spelllang=en_us
 
@@ -80,11 +100,6 @@ set smartcase
 set mouse=a
 aunmenu PopUp.How-to\ disable\ mouse
 aunmenu PopUp.-1-
-
-" transparency
-let g:neovide_transparency=0.7
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
 
 " neovide settings
 let g:neovide_remember_window_size=v:true
