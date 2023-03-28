@@ -90,6 +90,11 @@ highlight NonText ctermbg=none
 let g:neovide_remember_window_size=v:true
 let g:neovide_hide_mouse_when_typing=v:true
 
+" particles dont judge
+let g:neovide_cursor_vfx_mode = "pixiedust"
+let g:neovide_cursor_vfx_particle_density = 12.0
+let g:neovide_cursor_vfx_particle_lifetime = 0.6
+
 " cygwin on windows
 if has("win32")
 	let $CHERE_INVOKING=1
