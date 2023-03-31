@@ -1,3 +1,5 @@
+"source /media/unplugred/Data/repos/vimrc/.vimrc
+
 " vimplug
 call plug#begin('~/.local/share/nvim/plugged')
 " nerd tree my beloved, ctrl n
