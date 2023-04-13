@@ -55,7 +55,7 @@ nnoremap <expr><C-ScrollWheelUp> ChangeScaleFactor(1.05)
 nnoremap <expr><C-ScrollWheelDown> ChangeScaleFactor(1/1.05)
 
 " transparency
-let g:neovide_transparency=0.7
+let g:neovide_transparency=0.9
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
