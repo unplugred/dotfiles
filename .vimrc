@@ -14,6 +14,9 @@ Plug 'ap/vim-css-color'
 Plug 'junegunn/seoul256.vim'
 " git diff
 Plug 'mhinz/vim-signify'
+" focus mode
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 " root directory to current file
@@ -68,6 +71,19 @@ noremap <expr><C-S-ScrollWheelDown> ChangeTransparency(-0.02)
 
 " spell check
 setlocal spell spelllang=en_us
+
+" focus mode
+set scrolloff=5
+function! s:goyo_enter()
+  Limelight
+  set scrolloff=20
+endfunction
+function! s:goyo_leave()
+  Limelight!
+  set scrolloff=5
+endfunction
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " tabs superiority
 set tabstop=4
