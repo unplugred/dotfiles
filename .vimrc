@@ -17,6 +17,8 @@ Plug 'mhinz/vim-signify'
 " focus mode
 Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+" rainbow parentheses
+Plug 'junegunn/rainbow_parentheses.vim'
 call plug#end()
 
 " root directory to current file
@@ -48,6 +50,9 @@ set list
 " font
 set guifont=3270Narrow\ NF:h14
 set encoding=UTF-8
+
+" rainbow parentheses
+au VimEnter * RainbowParentheses
 
 " zoom hotkeys
 let g:neovide_scale_factor=1.0
