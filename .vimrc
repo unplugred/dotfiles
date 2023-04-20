@@ -2,12 +2,12 @@
 
 " vimplug
 call plug#begin('~/.local/share/nvim/plugged')
+" icons for nerd tree
+Plug 'ryanoasis/vim-devicons', { 'on': 'NERDTreeToggle' }
 " nerd tree my beloved, ctrl n
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 " ctrl p to look for files
 Plug 'ctrlpvim/ctrlp.vim'
-" icons for nerd tree
-Plug 'ryanoasis/vim-devicons'
 " css colors highlighted very cool
 Plug 'ap/vim-css-color'
 " color theme that ill eventually grow out of
@@ -15,8 +15,8 @@ Plug 'junegunn/seoul256.vim'
 " git diff
 Plug 'mhinz/vim-signify'
 " focus mode
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 call plug#end()
 
 " root directory to current file
