@@ -52,6 +52,7 @@ set guifont=3270Narrow\ NF:h14
 set encoding=UTF-8
 
 " rainbow parentheses
+let g:rainbow#pairs = [['(', ')'], ['[', ']']]
 au VimEnter * RainbowParentheses
 
 " zoom hotkeys
