@@ -2,10 +2,12 @@
 
 " vimplug
 call plug#begin('~/.local/share/nvim/plugged')
-" icons for nerd tree
-Plug 'ryanoasis/vim-devicons', { 'on': 'NERDTreeToggle' }
-" nerd tree my beloved, ctrl n
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+" fern ctrl n
+Plug 'lambdalisue/nerdfont.vim', { 'on': 'Fern' }
+Plug 'lambdalisue/glyph-palette.vim', { 'on': 'Fern' }
+Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
+Plug 'lambdalisue/fern-renderer-nerdfont.vim', { 'on': 'Fern' }
+Plug 'lambdalisue/fern-git-status.vim', { 'on': 'Fern' }
 " ctrl p to look for files
 Plug 'ctrlpvim/ctrlp.vim'
 " css colors highlighted very cool
@@ -20,7 +22,7 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 " rainbow parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
 " firefox vim
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 
 " root directory to current file
@@ -122,8 +124,9 @@ highlight Terminal guibg='#3a3a3a'
 highlight Terminal guifg='#d0d0d0'
 
 
-" nerdtree binding
-map <C-n> :NERDTreeToggle<CR>
+" fern binding
+let g:fern#renderer = "nerdfont"
+map <C-n> :Fern . -reveal=% -drawer -toggle<CR>
 
 " disable bells
 set noerrorbells
@@ -161,6 +164,6 @@ if has("win32")
 	let $CHERE_INVOKING=1
 	set shellcmdflag=--login\ -c
 	set shellxquote=\"
-	set shellslash
+"	set shellslash
 	let $PATH .= ';C:\cygwin64\bin'
 endif
