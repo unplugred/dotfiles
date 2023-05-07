@@ -21,8 +21,8 @@ Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 " rainbow parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
-" firefox vim
-"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+" recent files
+Plug 'gpanders/vim-oldfiles'
 call plug#end()
 
 " root directory to current file
