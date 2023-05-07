@@ -21,6 +21,8 @@ Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 " rainbow parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
+" ale
+Plug 'dense-analysis/ale'
 " recent files
 Plug 'gpanders/vim-oldfiles'
 call plug#end()
@@ -140,6 +142,10 @@ set nofixendofline
 
 " syntax highlighting for ejs
 au BufNewFile,BufRead *.ejs set filetype=html
+
+" ale
+let g:ale_linters = {'text': ['cspell','languagetool','proselint']}
+let g:ale_warn_about_trailing_whitespace = 1
 
 " smart case searching
 set ignorecase
