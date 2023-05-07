@@ -2,7 +2,7 @@
 
 " vimplug
 call plug#begin('~/.local/share/nvim/plugged')
-" fern ctrl n
+" ctrl n fern
 Plug 'lambdalisue/nerdfont.vim', { 'on': 'Fern' }
 Plug 'lambdalisue/glyph-palette.vim', { 'on': 'Fern' }
 Plug 'lambdalisue/fern.vim', { 'on': 'Fern' }
@@ -10,21 +10,21 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim', { 'on': 'Fern' }
 Plug 'lambdalisue/fern-git-status.vim', { 'on': 'Fern' }
 " ctrl p to look for files
 Plug 'ctrlpvim/ctrlp.vim'
+" recent files
+Plug 'gpanders/vim-oldfiles'
+" focus mode
+Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 " css colors highlighted very cool
 Plug 'ap/vim-css-color'
 " color theme that ill eventually grow out of
 Plug 'junegunn/seoul256.vim'
 " git diff
 Plug 'mhinz/vim-signify'
-" focus mode
-Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 " rainbow parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
 " ale
 Plug 'dense-analysis/ale'
-" recent files
-Plug 'gpanders/vim-oldfiles'
 call plug#end()
 
 " root directory to current file
