@@ -99,6 +99,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
+autocmd FileType python setlocal noexpandtab
 
 " some more color theme action
 let g:seoul256_background = 235
