@@ -165,10 +165,6 @@ let g:neovide_cursor_vfx_mode = "pixiedust"
 let g:neovide_cursor_vfx_particle_density = 12.0
 let g:neovide_cursor_vfx_particle_lifetime = 0.6
 
-" temp files
-set backupdir=~/tmp
-let $TMP="~/tmp"
-
 " zsh
 set shell=zsh
 if has("win32")
