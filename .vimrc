@@ -140,8 +140,9 @@ set autoindent
 " no new line at end of file
 set nofixendofline
 
-" syntax highlighting for ejs
+" correct syntax highlighting
 au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.json set filetype=javascript
 
 " ale
 let g:ale_linters = {'text': ['cspell','languagetool','proselint']}
