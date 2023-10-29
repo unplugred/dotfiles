@@ -55,6 +55,7 @@ set list
 
 " font
 set guifont=3270Narrow\ NF:h14
+" set guifont=FiraCode\ Nerd\ Font\ Mono\ Med:h18
 set encoding=UTF-8
 
 " rainbow parentheses
@@ -142,7 +143,7 @@ set nofixendofline
 
 " correct syntax highlighting
 au BufNewFile,BufRead *.ejs set filetype=html
-au BufNewFile,BufRead *.json set filetype=javascript
+au BufNewFile,BufRead *.pyon set filetype=python
 
 " ale
 let g:ale_linters = {'text': ['cspell','languagetool','proselint']}
@@ -160,6 +161,7 @@ aunmenu PopUp.-1-
 " neovide settings
 let g:neovide_remember_window_size=v:true
 let g:neovide_hide_mouse_when_typing=v:true
+let g:neovide_theme = 'dark'
 
 " particles dont judge
 let g:neovide_cursor_vfx_mode = "pixiedust"
