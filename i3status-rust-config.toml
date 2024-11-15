@@ -1,0 +1,64 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "nord-dark"
+[theme.overrides]
+idle_bg = "#333233"
+idle_fg = "#d9d9d9"
+info_bg = "#9a7372"
+info_fg = "#dfdebd"
+good_bg = "#87af87"
+good_fg = "#4b4b4b"
+warning_bg = "#ffd787"
+warning_fg = "#4b4b4b"
+critical_bg = "#d75f87"
+critical_fg = "#4b4b4b"
+separator = "\ue0b2"
+separator_bg = "auto"
+separator_fg = "auto"
+
+[icons]
+icons = "awesome6"
+
+[[block]]
+block = "music"
+
+[[block]]
+block = "weather"
+format = " $icon $temp "
+format_alt = " $icon_ffin $temp_favg ({$temp_fmin}-{$temp_fmax}) "
+[block.service]
+name = "openweathermap"
+api_key = "23b66a51daf5f1747759c31740b63894"
+coordinates = ["32.816","34.989"]
+units = "metric"
+forecast_hours = 9
+
+[[block]]
+block = "bluetooth"
+mac = "00:e0:4c:68:00:fe"
+disconnected_format = ""
+format = " $icon "
+[block.battery_state]
+"0..20" = "critical"
+"21..70" = "warning"
+"71..100" = "good"
+
+[[block]]
+block = "battery"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "keyboard_layout"
+driver = "kbddbus"
+format = " $layout "
+[block.mappings]
+"English (US)" = "EN"
+"Hebrew (N/A)" = "HE"
+
+[[block]]
+block = "time"
+interval = 1
+format = " $icon $timestamp.datetime(f:'%a %d/%m %T') "

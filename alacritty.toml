@@ -1,0 +1,50 @@
+[bell]
+animation = "EaseOutExpo"
+color = "0xffffff"
+duration = 300
+
+[font]
+size = 12
+
+[font.bold]
+family = "IBM 3270 Nerd Font"
+
+[font.bold_italic]
+family = "IBM 3270 Nerd Font"
+
+[font.italic]
+family = "IBM 3270 Nerd Font"
+
+[font.normal]
+family = "IBM 3270 Nerd Font"
+
+[colors.primary]
+background = '#333233'
+foreground = '#d9d9d9'
+
+[colors.cursor]
+text       = '#333233'
+cursor     = '#d9d9d9'
+
+[colors.normal]
+black      = '#4e4e4e'
+red        = '#d68787'
+green      = '#5f865f'
+yellow     = '#d8af5f'
+blue       = '#85add4'
+magenta    = '#d7afaf'
+cyan       = '#87afaf'
+white      = '#d0d0d0'
+
+[colors.bright]
+black      = '#626262'
+red        = '#d75f87'
+green      = '#87af87'
+yellow     = '#ffd787'
+blue       = '#add4fb'
+magenta    = '#ffafaf'
+cyan       = '#87d7d7'
+white      = '#e4e4e4'
+
+[window]
+#opacity = 0.9

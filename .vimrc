@@ -35,7 +35,7 @@ set wildmenu
 
 " hide unnecessary bottom bar
 set cmdheight=1
-lua vim.o.ls=0
+"lua vim.o.ls=0
 lua vim.o.ch=0
 
 " window title
@@ -54,7 +54,7 @@ set listchars=tab:>—,trail:~,extends:>,precedes:<,space:·
 set list
 
 " font
-set guifont=3270Narrow\ NF:h14
+set guifont=IBM\ 3270\ Nerd\ Font:h12
 " set guifont=FiraCode\ Nerd\ Font\ Mono\ Med:h18
 set encoding=UTF-8
 
@@ -71,9 +71,9 @@ nnoremap <expr><C-ScrollWheelUp> ChangeScaleFactor(1.05)
 nnoremap <expr><C-ScrollWheelDown> ChangeScaleFactor(1/1.05)
 
 " transparency
-let g:neovide_transparency=0.9
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+"let g:neovide_transparency=0.9
+"highlight Normal ctermbg=none
+"highlight NonText ctermbg=none
 
 " transparency hotkeys
 function! ChangeTransparency(delta)
@@ -127,9 +127,9 @@ let g:terminal_color_15 = '#e4e4e4'
 highlight Terminal guibg='#3a3a3a'
 highlight Terminal guifg='#d0d0d0'
 
-
 " fern binding
 let g:fern#renderer = "nerdfont"
+let g:fern#default_hidden = 1
 map <C-n> :Fern . -reveal=% -drawer -toggle<CR>
 
 " disable bells
