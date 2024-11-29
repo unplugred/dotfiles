@@ -9,5 +9,13 @@ linemode = "size_and_mtime"
 
 [opener]
 edit = [
-	{ run = 'neovide "$@"', orphan = true, desc = "$EDITOR", for = "unix" },
+	{ run = 'neovide "$@"', orphan = true, desc = "neovide", for = "unix" },
+]
+term = [
+	{ run = 'alacritty --working-directory "$@"', orphan = true, desc = "alacritty", for = "unix" },
+]
+
+[open]
+prepend_rules = [
+	{ mime = "inode/directory", use = "term" },
 ]

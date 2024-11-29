@@ -23,9 +23,9 @@ bar {
 		statusline #d9d9d9
 		separator  #d9d9d9
 
-		focused_workspace  #87af87 #87af87 #4b4b4b
-		active_workspace   #ffd787 #ffd787 #4b4b4b
-		inactive_workspace #d78787 #d78787 #4b4b4b
+		focused_workspace  #9a7372 #9a7372 #dfdebd
+		active_workspace   #4b4b4b #4b4b4b #dfdebd
+		inactive_workspace #4b4b4b #4b4b4b #dfdebd
 		urgent_workspace   #d75f87 #d75f87 #4b4b4b
 	}
 }
@@ -48,9 +48,25 @@ bindsym $mod+Shift+l move right
 exec_always setxkbmap -option grp:alt_shift_toggle us,il; pkill kbdd; /usr/bin/kbdd
 
 exec_always --no-startup-id compton
+exec --no-startup-id feh --randomize --bg-scale /media/unplugred/Data/repos/vimrc/background/
+exec killall -q notify-osd
+exec killall -q notify-send
+exec --no-startup-id dunst
 
 for_window [class="borderless" instance="borderless"] floating enable
 for_window [class="Calque" instance="calque"] floating enable
+for_window [class="Plastic Funeral" instance="Plastic Funeral"] floating enable
+for_window [class="VU" instance="VU"] floating enable
+for_window [class="ClickBox" instance="ClickBox"] floating enable
+for_window [class="Pisstortion" instance="Pisstortion"] floating enable
+for_window [class="PNCH" instance="PNCH"] floating enable
+for_window [class="Red Bass" instance="Red Bass"] floating enable
+for_window [class="MPaint" instance="MPaint"] floating enable
+for_window [class="CRMBL" instance="CRMBL"] floating enable
+for_window [class="Prisma" instance="Prisma"] floating enable
+for_window [class="SunBurnt" instance="SunBurnt"] floating enable
+for_window [class="Diet Audio" instance="Diet Audio"] floating enable
+for_window [class="Scope" instance="Scope"] floating enable
 
 # existing conf:
 

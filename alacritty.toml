@@ -47,4 +47,4 @@ cyan       = '#87d7d7'
 white      = '#e4e4e4'
 
 [window]
-#opacity = 0.9
+opacity = 0.95
