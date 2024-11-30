@@ -66,6 +66,7 @@ au VimEnter * RainbowParentheses
 let g:neovide_scale_factor=1.0
 function! ChangeScaleFactor(delta)
   let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
+  redraw!
 endfunction
 nnoremap <expr><C-ScrollWheelUp> ChangeScaleFactor(1.05)
 nnoremap <expr><C-ScrollWheelDown> ChangeScaleFactor(1/1.05)
@@ -78,6 +79,7 @@ highlight NonText ctermbg=none
 " transparency hotkeys
 function! ChangeTransparency(delta)
   let g:neovide_transparency = g:neovide_transparency + a:delta
+  redraw!
 endfunction
 noremap <expr><C-S-ScrollWheelUp> ChangeTransparency(0.02)
 noremap <expr><C-S-ScrollWheelDown> ChangeTransparency(-0.02)
