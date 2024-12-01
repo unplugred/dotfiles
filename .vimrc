@@ -73,6 +73,8 @@ nnoremap <expr><C-ScrollWheelDown> ChangeScaleFactor(1/1.05)
 
 " transparency
 let g:neovide_transparency=0.95
+set pumblend=40
+set winblend=40
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
@@ -83,6 +85,9 @@ function! ChangeTransparency(delta)
 endfunction
 noremap <expr><C-S-ScrollWheelUp> ChangeTransparency(0.02)
 noremap <expr><C-S-ScrollWheelDown> ChangeTransparency(-0.02)
+
+" scroll speed
+let g:neovide_scroll_animation_length = 0.2
 
 " spell check
 setlocal spell spelllang=en_us
