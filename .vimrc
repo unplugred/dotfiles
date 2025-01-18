@@ -75,13 +75,6 @@ endfunction
 nnoremap <expr><C-ScrollWheelUp> ChangeScaleFactor(1.05)
 nnoremap <expr><C-ScrollWheelDown> ChangeScaleFactor(1/1.05)
 
-" transparency
-let g:neovide_transparency=0.95
-set pumblend=40
-set winblend=40
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-
 " transparency hotkeys
 function! ChangeTransparency(delta)
   let g:neovide_transparency = g:neovide_transparency + a:delta
@@ -137,6 +130,17 @@ let g:terminal_color_14 = '#87d7d7'
 let g:terminal_color_15 = '#e4e4e4'
 highlight Terminal guibg='#3a3a3a'
 highlight Terminal guifg='#d0d0d0'
+
+" transparency
+let g:neovide_transparency=0.95
+set pumblend=40
+set winblend=40
+if !exists("g:neovide")
+	highlight Normal guibg=none
+	highlight NonText guibg=none
+	highlight Normal ctermbg=none
+	highlight NonText ctermbg=none
+endif
 
 " fern binding
 let g:fern#renderer = "nerdfont"
