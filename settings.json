@@ -1,0 +1,91 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [],
+    "alwaysShowTabs": false,
+    "defaultProfile": "{b7b53bb2-b216-47a3-a7bc-4d0461e500d3}",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "antialiasingMode": "cleartype",
+            "bellStyle": "window",
+            "closeOnExit": "never",
+            "colorScheme": "Seoul256",
+            "cursorShape": "filledBox",
+            "experimental.retroTerminalEffect": false,
+            "font": 
+            {
+                "face": "IBM 3270 Nerd Font",
+                "size": 12,
+                "weight": "light"
+            },
+            "historySize": 9001,
+            "intenseTextStyle": "all",
+            "opacity": 95,
+            "padding": "0",
+            "scrollbarState": "hidden",
+            "snapOnInput": true,
+            "startingDirectory": null,
+            "useAcrylic": false
+        },
+        "list": 
+        [
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "commandline": "\"%HOMEDRIVE%\\cygwin64\\bin\\zsh.exe\" -l -c \"cd $OLDPWD; exec /bin/zsh\"",
+                "guid": "{b7b53bb2-b216-47a3-a7bc-4d0461e500d3}",
+                "hidden": false,
+                "icon": "%HOMEDRIVE%\\cygwin64\\Cygwin-Terminal.ico",
+                "name": "Cygwin"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#333233",
+            "black": "#4E4E4E",
+            "blue": "#85ADD4",
+            "brightBlack": "#626262",
+            "brightBlue": "#ADD4FB",
+            "brightCyan": "#87D7D7",
+            "brightGreen": "#87AF87",
+            "brightPurple": "#FFAFAF",
+            "brightRed": "#D75F87",
+            "brightWhite": "#E4E4E4",
+            "brightYellow": "#FFD787",
+            "cursorColor": "#D9D9D9",
+            "cyan": "#87AFAF",
+            "foreground": "#D9D9D9",
+            "green": "#5F865F",
+            "name": "Seoul256",
+            "purple": "#D7AFAF",
+            "red": "#D68787",
+            "selectionBackground": "#FFFFFF",
+            "white": "#D0D0D0",
+            "yellow": "#D8AF5F"
+        }
+    ],
+    "showTabsInTitlebar": false,
+    "theme": "dark",
+    "themes": [],
+    "useAcrylicInTabRow": true
+}
