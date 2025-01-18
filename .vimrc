@@ -54,7 +54,11 @@ set listchars=tab:>—,trail:~,extends:>,precedes:<,space:·
 set list
 
 " font
-set guifont=IBM\ 3270\ Nerd\ Font:h12
+if has("macunix")
+	set guifont=IBM\ 3270\ Nerd\ Font:h15
+else
+	set guifont=IBM\ 3270\ Nerd\ Font:h12
+endif
 " set guifont=FiraCode\ Nerd\ Font\ Mono\ Med:h18
 set encoding=UTF-8
 
