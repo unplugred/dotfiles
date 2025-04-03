@@ -77,7 +77,7 @@ nnoremap <expr><C-ScrollWheelDown> ChangeScaleFactor(1/1.05)
 
 " transparency hotkeys
 function! ChangeTransparency(delta)
-  let g:neovide_transparency = g:neovide_transparency + a:delta
+  let g:neovide_opacity = g:neovide_opacity + a:delta
   redraw!
 endfunction
 noremap <expr><C-S-ScrollWheelUp> ChangeTransparency(0.02)
@@ -132,7 +132,7 @@ highlight Terminal guibg='#3a3a3a'
 highlight Terminal guifg='#d0d0d0'
 
 " transparency
-let g:neovide_transparency=0.95
+let g:neovide_opacity=0.95
 set pumblend=40
 set winblend=40
 if !exists("g:neovide")
@@ -180,7 +180,7 @@ let g:neovide_theme = 'dark'
 
 " particles dont judge
 let g:neovide_cursor_vfx_mode = "pixiedust"
-let g:neovide_cursor_vfx_particle_density = 12.0
+let g:neovide_cursor_vfx_particle_density = 0.7
 let g:neovide_cursor_vfx_particle_lifetime = 0.6
 
 " zsh

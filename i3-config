@@ -31,7 +31,7 @@ bar {
 }
 
 bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+f exec konsole -e yazi
+bindsym $mod+Shift+f exec dolphin
 bindsym $mod+Shift+n exec neovide
 bindsym $mod+Shift+z exec zen
 bindsym $mod+Shift+c exec calque --no-sandbox
@@ -67,12 +67,18 @@ for_window [class="Prisma" instance="Prisma"] floating enable
 for_window [class="SunBurnt" instance="SunBurnt"] floating enable
 for_window [class="Diet Audio" instance="Diet Audio"] floating enable
 for_window [class="Scope" instance="Scope"] floating enable
+for_window [class="Magic Carpet" instance="Magic Carpet"] floating enable
+for_window [class="ModMan" instance="ModMan"] floating enable
 
 # existing conf:
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+exec export QT_QPA_PLATFORMTHEME=qt6ct
+exec export QT_PLATFORMTHEME=qt6ct
+exec export QT_PLATFORM_PLUGIN=qt6ct
+exec export QT_STYLE_OVERRIDE=kvantum
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
