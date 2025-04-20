@@ -6,7 +6,7 @@ client.focused_inactive #4b4b4b #4b4b4b #dfdebd #4b4b4b #4b4b4b
 client.unfocused        #4b4b4b #4b4b4b #dfdebd #4b4b4b #4b4b4b
 client.urgent           #4b4b4b #4b4b4b #dfdebd #4b4b4b #4b4b4b
 client.placeholder      #4b4b4b #4b4b4b #dfdebd #4b4b4b #4b4b4b
-client.background       #333233
+client.background       #333233f2
 gaps horizontal 0
 gaps vertical 0
 #smart_gaps on
@@ -14,12 +14,13 @@ default_border pixel 3
 default_floating_border pixel 3
 #smart_borders on
 bar {
+	i3bar_command i3bar --transparency
 	position top
 	status_command ~/.cargo/bin/i3status-rs
 	tray_output none
 
 	colors {
-		background #333233
+		background #333233f2
 		statusline #d9d9d9
 		separator  #d9d9d9
 
