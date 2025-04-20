@@ -3,7 +3,7 @@ icons_format = "{icon}"
 [theme]
 theme = "nord-dark"
 [theme.overrides]
-idle_bg = "#333233"
+idle_bg = "#333233f2"
 idle_fg = "#d9d9d9"
 info_bg = "#9a7372"
 info_fg = "#dfdebd"
