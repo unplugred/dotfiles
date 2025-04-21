@@ -4,15 +4,15 @@ icons_format = "{icon}"
 theme = "nord-dark"
 [theme.overrides]
 idle_bg = "#333233f2"
-idle_fg = "#d9d9d9"
-info_bg = "#9a7372"
-info_fg = "#dfdebd"
-good_bg = "#87af87"
-good_fg = "#4b4b4b"
-warning_bg = "#ffd787"
-warning_fg = "#4b4b4b"
-critical_bg = "#d75f87"
-critical_fg = "#4b4b4b"
+idle_fg = "#d9d9d9ff"
+info_bg = "#9a7372ff"
+info_fg = "#dfdebdff"
+good_bg = "#87af87ff"
+good_fg = "#4b4b4bff"
+warning_bg = "#ffd787ff"
+warning_fg = "#4b4b4bff"
+critical_bg = "#d75f87ff"
+critical_fg = "#4b4b4bff"
 separator = "\ue0b2"
 separator_bg = "auto"
 separator_fg = "auto"
@@ -29,6 +29,7 @@ format = " $icon $temp "
 format_alt = " $icon_ffin $temp_favg ({$temp_fmin}-{$temp_fmax}) "
 [block.service]
 name = "openweathermap"
+api_key = "365a943fe2d0ea21cd45834aae0aa036"
 coordinates = ["32.816","34.989"]
 units = "metric"
 forecast_hours = 9
@@ -45,6 +46,9 @@ format = " $icon "
 
 [[block]]
 block = "battery"
+
+[[block]]
+block = "backlight"
 
 [[block]]
 block = "sound"
