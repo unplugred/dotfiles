@@ -29,7 +29,7 @@ format = " $icon $temp "
 format_alt = " $icon_ffin $temp_favg ({$temp_fmin}-{$temp_fmax}) "
 [block.service]
 name = "openweathermap"
-api_key = "365a943fe2d0ea21cd45834aae0aa036"
+api_key = ""
 coordinates = ["32.816","34.989"]
 units = "metric"
 forecast_hours = 9
