@@ -57,6 +57,8 @@ set $ws10 "10"
 bindsym $mod+Shift+t restart
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym Print exec "flameshot gui"
+
 
 font pango:IBM 3270 Nerd Font 12
 client.focused          #9a7372ff #9a7372ff #dfdebdff #9a7372ff #9a7372ff
