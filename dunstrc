@@ -1,0 +1,43 @@
+[global]
+monitor = 0
+follow = keyboard
+
+width = (150, 300)
+height = (0, 300)
+origin = top-right
+offset = (10, 10)
+horizontal_padding = 8
+text_icon_padding = 0
+frame_width = 0
+gap_size = 6
+padding = 6
+
+transparency = 5
+font = IBM 3270 Nerd Font 12
+icon_theme = "breeze-dark"
+
+progress_bar_frame_width = 2
+progress_bar_frame_color = "#d9d9d9"
+
+[urgency_low]
+background = "#9a7372"
+foreground = "#dfdedb"
+frame_color = "#dfdedb"
+timeout = 10
+default_icon = none
+
+[urgency_normal]
+background = "#4b4b4b"
+foreground = "#d9d9d9"
+frame_color = "#d9d9d9"
+timeout = 10
+override_pause_level = 30
+default_icon = none
+
+[urgency_critical]
+background = "#d75f87"
+foreground = "#4b4b4b"
+frame_color = "#4b4b4b"
+timeout = 0
+override_pause_level = 60
+default_icon = none
