@@ -95,7 +95,7 @@ bar {
 }
 
 exec_always setxkbmap -option grp:alt_shift_toggle us,il; pkill kbdd; /usr/bin/kbdd
-exec_always --no-startup-id compton
+exec_always --no-startup-id xcompmgr
 exec --no-startup-id feh --randomize --bg-fill /media/unplugred/Data/repos/vimrc/background/
 exec killall -q notify-osd
 exec killall -q notify-send
