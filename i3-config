@@ -56,16 +56,17 @@ set $ws10 "10"
 
 bindsym $mod+Shift+t restart
 bindsym $mod+Shift+r reload
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit' -f 'pango:IBM 3270 Nerd Font 12'"
+
 bindsym Print exec "flameshot gui"
 
 
 font pango:IBM 3270 Nerd Font 12
 client.focused          #9a7372ff #9a7372ff #dfdebdff #9a7372ff #9a7372ff
-client.focused_inactive #4b4b4bf2 #4b4b4bf2 #dfdebdf2 #4b4b4bf2 #4b4b4bf2
-client.unfocused        #4b4b4bf2 #4b4b4bf2 #dfdebdf2 #4b4b4bf2 #4b4b4bf2
-client.urgent           #4b4b4bf2 #4b4b4bf2 #dfdebdf2 #4b4b4bf2 #4b4b4bf2
-client.placeholder      #4b4b4bf2 #4b4b4bf2 #dfdebdf2 #4b4b4bf2 #4b4b4bf2
+client.focused_inactive #4b4b4bf2 #4b4b4bf2 #d9d9d9f2 #4b4b4bf2 #4b4b4bf2
+client.unfocused        #4b4b4bf2 #4b4b4bf2 #d9d9d9f2 #4b4b4bf2 #4b4b4bf2
+client.urgent           #4b4b4bf2 #4b4b4bf2 #d9d9d9f2 #4b4b4bf2 #4b4b4bf2
+client.placeholder      #4b4b4bf2 #4b4b4bf2 #d9d9d9f2 #4b4b4bf2 #4b4b4bf2
 client.background       #333233f2
 gaps outer 0
 gaps inner 0
@@ -88,8 +89,8 @@ bar {
 		separator  #d9d9d9ff
 
 		focused_workspace  #9a7372ff #9a7372ff #dfdebdff
-		active_workspace   #4b4b4bf2 #4b4b4bf2 #dfdebdff
-		inactive_workspace #4b4b4bf2 #4b4b4bf2 #dfdebdff
+		active_workspace   #333233f2 #333233f2 #d9d9d9ff
+		inactive_workspace #333233f2 #333233f2 #d9d9d9ff
 		urgent_workspace   #d75f87ff #d75f87ff #4b4b4bff
 	}
 }
