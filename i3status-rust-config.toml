@@ -55,7 +55,7 @@ block = "sound"
 
 [[block]]
 block = "keyboard_layout"
-driver = "kbddbus"
+driver = "sway"
 format = " $layout "
 [block.mappings]
 "English (US)" = "EN"

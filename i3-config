@@ -1,5 +1,20 @@
 set $mod Mod4
-bindsym $mod+d exec --no-startup-id dmenu_run -nb '#333233' -nf '#d9d9d9' -sb '#9a7372' -sf '#dfdebd' -fn 'IBM 3270 Nerd Font-12'
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $font IBM 3270 Nerd Font 12
+set $col_nbg 333233f2
+set $col_nfg d9d9d9ff
+set $col_abg 4b4b4bf2
+set $col_afg d9d9d9ff
+set $col_sbg 9a7372ff
+set $col_sfg dfdebdff
+set $col_ubg d75f87ff
+set $col_ufg d9d9d9ff
+
+bindsym $mod+d exec tofi-run --font "$font" --ascii-input true --anchor top --width 100% --height 17 --horizontal true --font-size 12 --prompt-text "" --outline-width 0 --border-width 0 --min-input-width 150 --result-spacing 12 --padding-top 0 --padding-bottom 0 --padding-left 6 --padding-right 0 --selection-background-padding "0,6" --background-color "#$col_nbg" --text-color "#$col_nfg" --selection-background "#$col_sbg" --selection-color "#$col_sfg" | xargs swaymsg exec --
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+f exec dolphin
@@ -7,22 +22,31 @@ bindsym $mod+Shift+n exec neovide
 bindsym $mod+Shift+z exec zen
 bindsym $mod+Shift+c exec calque --no-sandbox
 
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 bindsym $mod+Shift+q kill
 
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 floating_modifier $mod
-tiling_drag modifier titlebar
 
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -43,42 +67,39 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
-bindsym $mod+Shift+t restart
 bindsym $mod+Shift+r reload
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit' -f 'pango:IBM 3270 Nerd Font 12'"
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'Exit session?' -B 'Exit' 'swaymsg exit' -s "Cancel" -f '$font' --background $col_ubg --text $col_ufg --button-background $col_ubg --button-text $col_ufg --border-bottom-size 0 --message-padding 0 --details-border-size 0 --button-border-size 0 --button-gap 12 --button-dismiss-gap 12 --button-margin-right 12 --button-padding 0"
 
 bindsym Print exec "flameshot gui"
 
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness && $refresh_i3status
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness && $refresh_i3status
-bindsym XF86AudioPlay exec playerctl play-pause && $refresh_i3status
-bindsym XF86AudioPause exec playerctl play-pause && $refresh_i3status
-bindsym XF86AudioNext exec playerctl next && $refresh_i3status
-bindsym XF86AudioPrev exec playerctl previous && $refresh_i3status
+exec --no-startup-id dunst
 
-font pango:IBM 3270 Nerd Font 12
-client.focused          #9a7372ff #9a7372ff #dfdebdff #9a7372ff #9a7372ff
-client.focused_inactive #4b4b4bf2 #4b4b4bf2 #d9d9d9f2 #4b4b4bf2 #4b4b4bf2
-client.unfocused        #4b4b4bf2 #4b4b4bf2 #d9d9d9f2 #4b4b4bf2 #4b4b4bf2
-client.urgent           #4b4b4bf2 #4b4b4bf2 #d9d9d9f2 #4b4b4bf2 #4b4b4bf2
-client.placeholder      #4b4b4bf2 #4b4b4bf2 #d9d9d9f2 #4b4b4bf2 #4b4b4bf2
-client.background       #333233f2
+input "type:keyboard" {
+	xkb_layout us,il
+	xkb_options grp:alt_shift_toggle,grp_led:scroll
+}
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
+
+font "$font"
+client.focused          #$col_sbg #$col_sbg #$col_sfg #$col_sbg #$col_sbg
+client.focused_inactive #$col_abg #$col_abg #$col_afg #$col_abg #$col_abg
+client.unfocused        #$col_abg #$col_abg #$col_afg #$col_abg #$col_abg
+client.urgent           #$col_abg #$col_abg #$col_afg #$col_abg #$col_abg
+client.placeholder      #$col_abg #$col_abg #$col_afg #$col_abg #$col_abg
+client.background       #$col_nbg
 gaps outer 0
 gaps inner 0
 default_border pixel 3
@@ -86,33 +107,27 @@ default_floating_border pixel 3
 smart_gaps on
 smart_borders on
 bar {
-	i3bar_command i3bar --transparency
 	status_command ~/.cargo/bin/i3status-rs
 	position top
 	tray_output none
 	tray_padding 1
-	padding -2 0
-	workspace_min_width 0
+	height 17
+	status_edge_padding 0
+	status_padding 0
 
 	colors {
-		background #333233f2
-		statusline #d9d9d9ff
-		separator  #d9d9d9ff
+		background #$col_nbg
 
-		focused_workspace  #9a7372ff #9a7372ff #dfdebdff
-		active_workspace   #333233f2 #333233f2 #d9d9d9ff
-		inactive_workspace #333233f2 #333233f2 #d9d9d9ff
-		urgent_workspace   #d75f87ff #d75f87ff #4b4b4bff
+		focused_workspace  #$col_sbg #$col_sbg #$col_sfg
+		active_workspace   #$col_nbg #$col_nbg #$col_nfg
+		inactive_workspace #$col_nbg #$col_nbg #$col_nfg
+		urgent_workspace   #$col_ubg #$col_ubg #$col_ufg
 	}
 }
 
-exec_always setxkbmap -option grp:alt_shift_toggle us,il; pkill kbdd; /usr/bin/kbdd
-exec_always --no-startup-id xcompmgr
-exec --no-startup-id feh --randomize --bg-fill /media/unplugred/Data/repos/vimrc/background/
-exec killall -q notify-osd
-exec killall -q notify-send
-exec --no-startup-id dunst
-exec --no-startup-id dex --autostart --environment i3
+set $bgcmd bg `find /media/unplugred/Data/repos/vimrc/background -type f | shuf -n 1` fill
+output eDP-1 $bgcmd
+output HDMI-A-1 $bgcmd
 
 for_window [class="borderless" instance="borderless"] floating enable
 for_window [class="Calque" instance="calque"] floating enable
