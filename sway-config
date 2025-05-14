@@ -71,7 +71,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'Exit session?' -B 'Exit' 'swaymsg exit' -s "Cancel" -f '$font' --background $col_ubg --text $col_ufg --button-background $col_ubg --button-text $col_ufg --border-bottom-size 0 --message-padding 0 --details-border-size 0 --button-border-size 0 --button-gap 12 --button-dismiss-gap 12 --button-margin-right 12 --button-padding 0"
 
-bindsym Print exec "flameshot gui"
+#bindsym Print exec "flameshot gui"
+bindsym Print exec "slurp | grim -g - - | wl-copy"
 
 exec --no-startup-id dunst
 
