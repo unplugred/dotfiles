@@ -126,9 +126,12 @@ bar {
 	}
 }
 
-set $bgcmd bg `find /media/unplugred/Data/repos/vimrc/background -type f | shuf -n 1` fill
+set $bgcmd bg `find ~/repos/dotfiles/background -type f | shuf -n 1` fill
 output eDP-1 $bgcmd
 output HDMI-A-1 $bgcmd
+output HDMI-A-2 $bgcmd
+output DP-3 $bgcmd
+output DP-4 $bgcmd
 
 for_window [class="borderless" instance="borderless"] floating enable
 for_window [class="Calque" instance="calque"] floating enable

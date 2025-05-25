@@ -1,4 +1,4 @@
-"source /media/unplugred/Data/repos/vimrc/.vimrc
+"source ~/repos/dotfiles/.vimrc
 
 " vimplug
 call plug#begin('~/.local/share/nvim/plugged')
