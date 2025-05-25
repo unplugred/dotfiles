@@ -1,4 +1,4 @@
-#source /media/unplugred/Data/repos/configs/.bashrc
+#source ~/repos/dotfiles/.bashrc
 
 export EDITOR='neovide'
 export VISUAL='neovide'

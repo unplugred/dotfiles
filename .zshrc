@@ -1,4 +1,4 @@
-#source /media/unplugred/Data/repos/vimrc/.zshrc
+#source ~/repos/dotfiles/.zshrc
 
 export ZSH="$HOME/.oh-my-zsh"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
