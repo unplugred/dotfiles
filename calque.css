@@ -1,0 +1,56 @@
+:root {
+	--background: #333233f2;
+	--foreground: #d9d9d9ff;
+	--markup: #9a7372ff;
+	--highlight: #252525f2;
+	--results: #9a7372ff;
+	--error: #d75f87ff;
+}
+
+body {
+	font-family: "IBM 3270 Nerd Font";
+}
+
+.interface {
+	border-radius: 0;
+	width: 100vw;
+	height: 100vh;
+	padding: 0px;
+}
+
+.input, .output {
+	font-family: "IBM 3270 Nerd Font";
+	font-size: 12pt;
+	line-height: 1;
+}
+
+.input {
+	padding: 5px;
+}
+
+.output {
+	padding: 5px 0;
+}
+
+.output div {
+	padding: 0 5px;
+}
+
+*::-webkit-scrollbar {
+	width: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+	border: none;
+	border-radius: 0;
+	transition: none;
+}
+
+.icon {
+	display: none;
+}
+
+hr {
+	height: 3px;
+	border-radius: 0;
+}

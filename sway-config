@@ -144,7 +144,7 @@ for_window {
 	[window_type="dialog"] floating enable
 
 	[app_id="borderless"] floating enable
-	[class="Calque" instance="calque"] floating enable
+	[class="Calque" instance="calque"] floating enable; border pixel 3
 	[app_id="pavucontrol"] floating enable
 	[app_id="zen" title="Picture-in-Picture"] floating enable, sticky enable
 
