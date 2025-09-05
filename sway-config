@@ -162,4 +162,5 @@ for_window {
 	[class="Scope" instance="Scope"] floating enable
 	[class="Magic Carpet" instance="Magic Carpet"] floating enable
 	[class="ModMan" instance="ModMan"] floating enable
+	[class="FM+" instance="FM+"] floating enable
 }
