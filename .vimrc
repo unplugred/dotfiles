@@ -27,7 +27,6 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'dense-analysis/ale'
 " airline
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " root directory to current file
@@ -42,10 +41,21 @@ set cmdheight=1
 lua vim.o.ch=0
 
 " airline
+let g:airline_theme='meltheme'
 let g:airline_powerline_fonts=1
-let g:airline_section_a=''
+let g:airline_mode_map = {
+	\ 't' : 'T',
+	\ 'c' : 'C',
+	\ 'n' : 'N',
+	\ 'v' : 'V',
+	\ 'V' : 'V',
+	\ '': 'V',
+	\ 'i' : 'I'}
+let g:airline_detect_spell=0
+let g:airline_detect_spelllang=0
+let g:airline_section_c = '%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%#__accent_bold#%#__restore__#%#__accent_bold#%#__restore__#'
 let g:airline_section_x=''
-let g:airline_section_y=''
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline_symbols={}
 let g:airline_symbols.linenr=' '
 let g:airline_symbols.colnr=' '
@@ -53,7 +63,6 @@ let g:airline_symbols.maxlinenr=''
 let g:airline#extensions#whitespace#mixed_indent_algo=2
 let g:airline#extensions#ale#enabled=0
 let g:airline_skip_empty_sections=1
-let g:airline_theme='seoul256'
 
 " window title
 set title titlestring=%t\ \ %m
