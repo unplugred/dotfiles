@@ -47,6 +47,7 @@ let g:airline_mode_map = {
 	\ 't' : 'T',
 	\ 'c' : 'C',
 	\ 'n' : 'N',
+	\ 'R' : 'R',
 	\ 'v' : 'V',
 	\ 'V' : 'V',
 	\ '': 'V',
@@ -134,7 +135,7 @@ set shiftwidth=4
 set noexpandtab
 autocmd FileType python setlocal noexpandtab
 
-" some more color theme action
+" color theme
 let g:seoul256_background=235
 color seoul256
 set background=dark
@@ -167,6 +168,8 @@ if !exists("g:neovide")
 	highlight Normal ctermbg=none
 	highlight NonText ctermbg=none
 endif
+highlight StatusLineTerm cterm=NONE gui=NONE
+highlight StatusLineTermNC cterm=NONE gui=NONE
 
 " fern binding
 let g:fern#renderer="nerdfont"
