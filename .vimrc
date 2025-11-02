@@ -77,7 +77,7 @@ set rnu
 set cursorline
 
 " show whitespace
-set listchars=tab:>—,trail:~,extends:>,precedes:<,space:·
+set listchars=tab:>-,trail:~,extends:>,precedes:<,space:·
 set list
 
 " font
