@@ -9,13 +9,21 @@
 
 body {
 	font-family: "IBM 3270 Nerd Font";
+	position: relative;
+	/*/
+	height: calc(100vh - 6px);
+	border: 3px solid #4b4b4b;
+	/**/
+}
+
+body:focus-within {
+	/*/
+	border: 3px solid var(--markup);
+	/**/
 }
 
 .interface {
 	border-radius: 0;
-	width: 100vw;
-	height: 100vh;
-	padding: 0px;
 }
 
 .input, .output {
