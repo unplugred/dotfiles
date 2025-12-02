@@ -82,9 +82,9 @@ set list
 
 " font
 if has("macunix")
-	set guifont=IBM\ 3270\ Nerd\ Font:h15
+	set guifont=IBM\ 3270\ Nerd\ Font:h15:#h-slight
 else
-	set guifont=IBM\ 3270\ Nerd\ Font:h12
+	set guifont=IBM\ 3270\ Nerd\ Font:h12:#h-slight
 endif
 " set guifont=FiraCode\ Nerd\ Font\ Mono\ Med:h18
 set encoding=UTF-8
