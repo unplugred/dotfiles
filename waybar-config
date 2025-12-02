@@ -1,0 +1,73 @@
+{
+	"layer": "bottom",
+	"position": "top",
+	"height": 0,
+	"spacing": 17,
+	"modules-left": ["sway/workspaces","sway/mode"],
+	"modules-center": ["sway/window"],
+	"modules-right": ["mpris","idle_inhibitor","battery","backlight","pulseaudio","sway/language","clock"],
+	"tray": {
+		"icon-size": 12,
+		"spacing": 0
+	},
+	"clock": {
+		"format": "{:%a %d/%m %H:%M:%S}",
+		"interval": 1,
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b>{}</b></span>"
+			}
+		}
+	},
+	"sway/language": {
+		"format": "{shortDescription}",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+	},
+	"pulseaudio": {
+		"format": "<span font_size='20pt' rise='-2pt'>{icon}</span> {volume}%",
+		"format-icons": {
+			"default": ["\uf026", "\uf027", "\uf028"]
+		},
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click-right": "pavucontrol",
+		"format-muted": "\uf00d {volume}%"
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "<span font_size='10pt' rise='2pt'>{icon}</span> {percent}%",
+		"format-icons": ["🌕","🌔","🌓","🌒","🌑"]
+	},
+	"battery": {
+		"interval": 60,
+		"full-at": 99,
+		"states": {
+			"good": 99,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "<span font_size='20pt' rise='-2pt'>{icon}</span> {capacity}%",
+		"format-icons": ["", "", "", "", ""],
+		"max-length": 25
+	},
+	"idle_inhibitor": {
+		"format": "<span font_size='20pt'>{icon}</span>",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
+	"mpris": {
+		"format": "DEFAULT: {player_icon} {dynamic}",
+		"format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+		"player-icons": {
+			"default": "▶",
+			"strawberry": "🎵"
+		},
+		"status-icons": {
+			"paused": "⏸"
+		},
+		"ignored-players": ["firefox"]
+	}
+}

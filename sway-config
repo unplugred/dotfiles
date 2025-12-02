@@ -112,22 +112,7 @@ default_floating_border pixel 3
 smart_gaps on
 smart_borders on
 bar {
-	status_command ~/.cargo/bin/i3status-rs
-	position top
-	tray_output none
-	tray_padding 1
-	height 17
-	status_edge_padding 0
-	status_padding 0
-
-	colors {
-		background #$col_nbg
-
-		focused_workspace  #$col_sbg #$col_sbg #$col_sfg
-		active_workspace   #$col_nbg #$col_nbg #$col_nfg
-		inactive_workspace #$col_nbg #$col_nbg #$col_nfg
-		urgent_workspace   #$col_ubg #$col_ubg #$col_ufg
-	}
+	swaybar_command waybar
 }
 
 set $bgcmd bg `find ~/repos/dotfiles/background -type f | shuf -n 1` fill
