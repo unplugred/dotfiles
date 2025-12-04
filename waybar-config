@@ -5,10 +5,10 @@
 	"spacing": 17,
 	"modules-left": ["sway/workspaces","sway/mode"],
 	"modules-center": ["sway/window"],
-	"modules-right": ["mpris","idle_inhibitor","battery","backlight","pulseaudio","sway/language","clock"],
+	"modules-right": ["privacy","mpris","idle_inhibitor","battery","backlight","network","pulseaudio","sway/language","clock"],
 	"tray": {
 		"icon-size": 12,
-		"spacing": 0
+		"spacing": 4
 	},
 	"clock": {
 		"format": "{:%a %d/%m %H:%M:%S}",
@@ -34,10 +34,18 @@
 		"on-click-right": "pavucontrol",
 		"format-muted": "\uf00d {volume}%"
 	},
+	"network": {
+		"format": "",
+		"format-wifi": "<span font_size='20pt' rise='-2pt'>\uf1eb</span>",
+		"format-ethernet": "<span font_size='20pt' rise='-2pt'>\uf817</span>",
+		"format-disconnected": "<span font_size='20pt' rise='-2pt'>\uf663</span>",
+		"on-click-right": "kitty nmtui",
+		"max-length": 50
+	},
 	"backlight": {
 		"device": "intel_backlight",
-		"format": "<span font_size='10pt' rise='2pt'>{icon}</span> {percent}%",
-		"format-icons": ["🌕","🌔","🌓","🌒","🌑"]
+		"format": "<span font_size='20pt' rise='-2pt'>{icon}</span> {percent}%",
+		"format-icons": ["\ue3d5","\ue3d6","\ue3d7","\ue3d8","\ue3d9","\ue3da","\ue3db","\ue3dc","\ue3dd","\ue3de","\ue3df","\ue3e0","\ue3e1","\ue3e2","\ue3e3"]
 	},
 	"battery": {
 		"interval": 60,
@@ -47,27 +55,33 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "<span font_size='20pt' rise='-2pt'>{icon}</span> {capacity}%",
-		"format-icons": ["", "", "", "", ""],
+		"format-plugged": "{icon}\uf1e6 {capacity}%",
+		"format-discharging": "{icon} {capacity}%",
+		"format-icons": ["\uf579","\uf57a","\uf57b","\uf57c","\uf57d","\uf57e","\uf57f","\uf580","\uf581","\uf578"],
 		"max-length": 25
 	},
 	"idle_inhibitor": {
 		"format": "<span font_size='20pt'>{icon}</span>",
 		"format-icons": {
-			"activated": "",
-			"deactivated": ""
-		}
+			"activated": "\uf707",
+			"deactivated": "\uf708"
+		},
+		"on-click-right": "wdisplays"
 	},
 	"mpris": {
-		"format": "DEFAULT: {player_icon} {dynamic}",
-		"format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+		"format": "<span font_size='20pt' rise='-2pt'>{player_icon}</span> {artist} - {title}",
+		"format-paused": "<span font_size='20pt' rise='-2pt'>{status_icon}</span> {artist} - {title}",
 		"player-icons": {
-			"default": "▶",
-			"strawberry": "🎵"
+			"default": "\uf04b",
+			"strawberry": "\uf001"
 		},
 		"status-icons": {
-			"paused": "⏸"
+			"paused": "\uf04c"
 		},
-		"ignored-players": ["firefox"]
+		"ignored-players": ["zen"]
+	},
+	"privacy": {
+		"icon-size": 12,
+		"spacing": 4
 	}
 }

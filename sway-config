@@ -131,6 +131,7 @@ for_window {
 	[app_id="borderless"] floating enable
 	[class="Calque" instance="calque"] floating enable; border pixel 3
 	[app_id="pavucontrol"] floating enable
+	[app_id="wdisplays"] floating enable
 	[app_id="zen" title="Picture-in-Picture"] floating enable, sticky enable
 	[app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
