@@ -3,6 +3,7 @@
 	"position": "top",
 	"height": 0,
 	"spacing": 17,
+	"fixed-center": false,
 	"modules-left": ["sway/workspaces","sway/mode"],
 	"modules-center": ["sway/window"],
 	"modules-right": ["privacy","mpris","idle_inhibitor","battery","backlight","network","pulseaudio","sway/language","clock"],
@@ -24,6 +25,7 @@
 	"sway/language": {
 		"format": "{shortDescription}",
 		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+		"tooltip-format": "",
 	},
 	"pulseaudio": {
 		"format": "<span font_size='20pt' rise='-2pt'>{icon}</span> {volume}%",
@@ -40,11 +42,16 @@
 		"format-ethernet": "<span font_size='20pt' rise='-2pt'>\uf817</span>",
 		"format-disconnected": "<span font_size='20pt' rise='-2pt'>\uf663</span>",
 		"on-click-right": "kitty nmtui",
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+		"tooltip-format-ethernet": "{ifname}",
+		"tooltip-format-disconnected": "Disconnected",
 		"max-length": 50
 	},
 	"backlight": {
 		"device": "intel_backlight",
 		"format": "<span font_size='20pt' rise='-2pt'>{icon}</span> {percent}%",
+		"tooltip-format": "",
 		"format-icons": ["\ue3d5","\ue3d6","\ue3d7","\ue3d8","\ue3d9","\ue3da","\ue3db","\ue3dc","\ue3dd","\ue3de","\ue3df","\ue3e0","\ue3e1","\ue3e2","\ue3e3"]
 	},
 	"battery": {
@@ -71,6 +78,8 @@
 	"mpris": {
 		"format": "<span font_size='20pt' rise='-2pt'>{player_icon}</span> {artist} - {title}",
 		"format-paused": "<span font_size='20pt' rise='-2pt'>{status_icon}</span> {artist} - {title}",
+		"format-len": 20,
+		"format-paused-len": 20,
 		"player-icons": {
 			"default": "\uf04b",
 			"strawberry": "\uf001"
@@ -78,10 +87,17 @@
 		"status-icons": {
 			"paused": "\uf04c"
 		},
-		"ignored-players": ["zen"]
+		"ignored-players": ["firefox"]
 	},
 	"privacy": {
 		"icon-size": 12,
 		"spacing": 4
+	},
+	"sway/window": {
+		"format": "{}",
+		"max-length": 60,
+		"rewrite": {
+			"(.*) — (.*)": "$1",
+		},
 	}
 }
