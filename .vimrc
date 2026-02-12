@@ -190,7 +190,10 @@ au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.pyon set filetype=python
 
 " ale
-let g:ale_linters={'text': ['cspell','languagetool','proselint']}
+let g:ale_linters = {
+\	'text': ['cspell','languagetool','proselint'],
+\	'cpp': ['ccls', 'clazy', 'cppcheck', 'cpplint', 'cquery', 'cspell', 'flawfinder']
+\}
 let g:ale_warn_about_trailing_whitespace=1
 
 " smart case searching
