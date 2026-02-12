@@ -62,8 +62,10 @@
 			"warning": 30,
 			"critical": 15
 		},
+		"format": "{icon}\uf1e6 {capacity}%",
 		"format-plugged": "{icon}\uf1e6 {capacity}%",
 		"format-discharging": "{icon} {capacity}%",
+		"format-not-charging": "{icon} {capacity}%",
 		"format-icons": ["\uf579","\uf57a","\uf57b","\uf57c","\uf57d","\uf57e","\uf57f","\uf580","\uf581","\uf578"],
 		"max-length": 25
 	},
