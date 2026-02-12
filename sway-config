@@ -71,6 +71,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'Exit session?' -B 'Exit' 'systemctl poweroff' -s "Cancel" -f '$font' --background $col_ubg --text $col_ufg --button-background $col_ubg --button-text $col_ufg --border-bottom-size 0 --message-padding 0 --details-border-size 0 --button-border-size 0 --button-gap 12 --button-dismiss-gap 12 --button-margin-right 12 --button-padding 0"
 
+exec --no-startup-id xscreensaver --no-splash
+exec --no-startup-id swayidle -w timeout 300 'xscreensaver-command -activate' timeout 1800 'xscreensaver-command -deactivate && swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+
 bindsym Print exec "flameshot gui"
 
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
