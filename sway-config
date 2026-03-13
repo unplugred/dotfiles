@@ -147,6 +147,7 @@ for_window {
 	[class="MPaint" instance="MPaint"] floating enable
 	[class="CRMBL" instance="CRMBL"] floating enable
 	[class="Prisma" instance="Prisma"] floating enable
+	[class="Prismon" instance="Prismon"] floating enable
 	[class="SunBurnt" instance="SunBurnt"] floating enable
 	[class="Diet Audio" instance="Diet Audio"] floating enable
 	[class="Scope" instance="Scope"] floating enable
