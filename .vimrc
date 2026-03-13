@@ -176,6 +176,17 @@ let g:fern#renderer="nerdfont"
 let g:fern#default_hidden=1
 map <C-n> :Fern . -reveal=% -drawer -toggle<CR>
 
+" ctrlp ignore
+set wildignore+=.git,.git/*,.vscode,.vscode/*
+let g:ctrlp_custom_ignore = '\v[\/]build(_windows|_linux|_mac|)$'
+
+" recent files
+map <C-o> <Plug>(Oldfiles)
+augroup oldfiles
+	autocmd!
+	autocmd FileType qf if get(w:, 'quickfix_title') =~# 'Oldfiles' | nnoremap <buffer> <CR> <CR>:cclose<CR> | endif
+augroup END
+
 " disable bells
 set noerrorbells
 
