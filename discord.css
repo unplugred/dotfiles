@@ -1,0 +1,129 @@
+::selection {
+	background: #007173;
+}
+body {
+	background-color: #333233f2;
+}
+* {
+	font-family: "IBM 3270 Nerd Font" !important;
+	font-size: 12pt !important;
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	--white: #dfdebd;
+	--app-frame-border: #4d4d4d;
+	--background-base-low: #252525f2 !important;
+	--background-base-lower: transparent !important;
+	--background-base-lowest: transparent !important;
+	--background-code: #00000042;
+	--background-feedback-critical: #be757242;
+	--background-scrim: #252525f2;
+	--background-scrim-lightbox: #333233c0;
+	--background-surface-high: #252525f2 !important;
+	--background-surface-higher: #252525f2;
+	--background-surface-highest: #252525f2;
+	--background-mod-strong: #252525f2;
+	--border-muted: #4d4d4d !important;
+	--border-normal: #4d4d4d !important;
+	--border-strong: #4d4d4d !important;
+	--border-subtle: #4d4d4d !important;
+	--channel-icon: #d9d9d9;
+	--channel-text-area-placeholder: #d9d9d988;
+	--channels-default: #d9d9d988;
+	--chat-background-default: #252525f2 !important;
+	--chat-text-muted: #d9d9d988;
+	--control-secondary-border-active: #4d4d4d;
+	--control-secondary-border-default: #4d4d4d;
+	--guild-profile-banner-background-default: transparent;
+	--input-background-default: #252525f2;
+	--input-border-active: #4d4d4d;
+	--input-border-default: #4d4d4d;
+	--input-border-hover: #4d4d4d;
+	--input-placeholder-text-default: #d9d9d988;
+	--input-text-default: #d9d9d9;
+	--message-background-hover: #00000042;
+	--scrollbar-auto-scrollbar-color-thumb: #d9d9d988;
+	--scrollbar-auto-scrollbar-color-track: transparent;
+	--scrollbar-auto-thumb: #d9d9d988;
+	--scrollbar-auto-track: transparent;
+	--scrollbar-thin-thumb: #d9d9d988;
+	--scrollbar-thin-track: transparent;
+	--text-default: #d9d9d9;
+	--icon-feedback-warning: #dfbc72;
+	--message-mentioned-background-default: #dfbc7242;
+	--message-mentioned-background-hover: #dfbc7242;
+	--text-feedback-critical: #be7572;
+	--text-feedback-positive: #719872;
+	--brand-500: #9a7372;
+	--background-feedback-notification: #be7572;
+	--text-link: #85add4;
+	--text-muted: #d9d9d9;
+	--text-strong: #d9d9d9;
+	--text-subtle: #d9d9d988;
+	--user-profile-border: #4d4d4d;
+	--user-profile-overlay-background: #00000042;
+	--background-brand: #9a7372;
+	--badge-expressive-background-default: #d9d9d988;
+	--badge-expressive-text-default: #333233;
+	--control-primary-background-active: #9a7372;
+	--control-primary-background-default: #9a7372;
+	--control-primary-background-hover: #9a7372;
+	--control-primary-border-active: #4b4b4b;
+	--control-primary-border-default: #4b4b4b;
+	--control-primary-border-hover: #4b4b4b;
+	--control-primary-icon-active: #dfdebd;
+	--control-primary-icon-default: #dfdebd;
+	--control-primary-icon-hover: #dfdebd;
+	--control-primary-text-active: #dfdebd;
+	--control-primary-text-default: #dfdebd;
+	--control-primary-text-hover: #dfdebd;
+	--control-secondary-text-active: #d9d9d988;
+	--control-secondary-text-default: #d9d9d988;
+	--control-secondary-text-hover: #d9d9d988;
+	--icon-strong: #d9d9d9;
+	--interactive-background-selected: #00000042;
+	--interactive-background-hover: #00000042;
+	--control-secondary-background-default: transparent;
+	--control-secondary-background-active: #00000042;
+	--control-secondary-background-hover: #00000042;
+	--background-mod-normal: #00000042;
+	--interactive-text-hover: #d9d9d9;
+	--radio-background-selected-default: #9a7372;
+	--text-brand: #9a7372;
+	--control-critical-primary-background-default: #be7572;
+	--control-critical-secondary-text-default: #be7572;
+	--control-critical-secondary-background-default: #00000042;
+	--spoiler-hidden-background: #4b4b4b !important;
+	--background-mod-subtle: #00000042 !important;
+}
+.usernameColorOnName_c19a55, .desaturateUserColors__41f68 {
+	filter: contrast(.4) brightness(1.2);
+}
+.copyOnlyText__10651 {
+	display: none;
+}
+.replyAvatar_c19a55:hover, .emoji:hover, .blobContainer_e5445c:hover, .container__91a9d:hover .avatar__44b0c, .interactive_bf202d:hover .avatar__44b0c, .avatar_c19a55:hover, .avatar__75742 .avatar__44b0c {
+	filter: none;
+}
+.replyAvatar_c19a55, .blobContainer_e5445c, .avatar__44b0c, .avatar_c19a55, .guildIcon_edbb22 {
+	filter: saturate(.6);
+}
+.emoji, .badge__10651 {
+	filter: saturate(.6);
+}
+.container__91a9d:hover .avatarDecorationContainer__44b0c, .container__91a9d:hover .container__4bbc6,
+.interactive_bf202d:hover .avatarDecorationContainer__44b0c, .interactive_bf202d:hover .container__4bbc6,
+.avatar_c19a55:hover + .avatarDecoration_c19a55 {
+	visibility: visible;
+}
+.container__91a9d .avatarDecorationContainer__44b0c, .container__91a9d .container__4bbc6,
+.interactive_bf202d .avatarDecorationContainer__44b0c, .interactive_bf202d .container__4bbc6,
+.avatar_c19a55 + .avatarDecoration_c19a55 {
+	visibility: hidden;
+}
+.sidebarListRounded__5e434 {
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
+}
+foreignObject {
+	mask: none;
+}
