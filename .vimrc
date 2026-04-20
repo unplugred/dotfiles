@@ -27,6 +27,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'dense-analysis/ale'
 " airline
 Plug 'vim-airline/vim-airline'
+Plug 'preservim/tagbar'
 call plug#end()
 
 " root directory to current file
@@ -54,7 +55,7 @@ let g:airline_mode_map = {
 	\ 'i' : 'I'}
 let g:airline_detect_spell=0
 let g:airline_detect_spelllang=0
-let g:airline_section_c = '%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%#__accent_bold#%#__restore__#%#__accent_bold#%#__restore__#'
+let g:airline_section_c = '%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__# %{airline#extensions#tagbar#currenttag()}%'
 let g:airline_section_x=''
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline_symbols={}
@@ -64,6 +65,8 @@ let g:airline_symbols.maxlinenr=''
 let g:airline#extensions#whitespace#mixed_indent_algo=2
 let g:airline#extensions#ale#enabled=0
 let g:airline_skip_empty_sections=1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#flags = 'f'
 
 " window title
 set title titlestring=%t\ \ %m
