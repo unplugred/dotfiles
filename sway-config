@@ -135,8 +135,11 @@ for_window {
 	[class="Calque" instance="calque"] floating enable; border pixel 3
 	[app_id="pavucontrol"] floating enable
 	[app_id="wdisplays"] floating enable
+	[title="Virtual MIDI Piano Keyboard"] floating enable
 	[app_id="zen" title="Picture-in-Picture"] floating enable, sticky enable
 	[app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+	[class="REAPER"] floating enable
+	[class="REAPER" title="REAPER v"] floating disable
 
 	[class="Plastic Funeral" instance="Plastic Funeral"] floating enable
 	[class="VU" instance="VU"] floating enable
@@ -153,5 +156,7 @@ for_window {
 	[class="Scope" instance="Scope"] floating enable
 	[class="Magic Carpet" instance="Magic Carpet"] floating enable
 	[class="ModMan" instance="ModMan"] floating enable
+	[class="Sucrose" instance="Sucrose"] floating enable
 	[class="FM+" instance="FM+"] floating enable
+	[class="Proto" instance="Proto"] floating enable
 }
