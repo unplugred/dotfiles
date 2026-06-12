@@ -173,6 +173,8 @@ if !exists("g:neovide")
 endif
 highlight StatusLineTerm cterm=NONE gui=NONE
 highlight StatusLineTermNC cterm=NONE gui=NONE
+highlight StatusLine cterm=NONE gui=NONE
+highlight StatusLineNC cterm=NONE gui=NONE
 
 " fern binding
 let g:fern#renderer="nerdfont"
