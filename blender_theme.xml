@@ -405,7 +405,7 @@
         <asset_shelf>
           <ThemeRegionsAssetShelf
             back="#33323300"
-            header_back="#1d1d1dff"
+            header_back="#33323300"
             >
           </ThemeRegionsAssetShelf>
         </asset_shelf>
@@ -413,7 +413,7 @@
           <ThemeRegionsChannels
             back="#333233"
             text="#d9d9d9"
-            text_selected="#ffaf23"
+            text_selected="#dfdebd"
             >
           </ThemeRegionsChannels>
         </channels>
@@ -442,14 +442,14 @@
             playhead="#9a7372"
             preview_range="#a14d0066"
             scene_strip_range="#00000080"
-            channels="#194e8080"
-            channels_sub="#0f2c4d80"
+            channels="#9a737280"
+            channels_sub="#684e4d80"
             channel_group="#1a332d37"
             channel_group_active="#216d5b67"
             channel="#12121299"
             channel_selected="#60c04044"
             keyframe="#bfbfbf"
-            keyframe_selected="#ffbe33"
+            keyframe_selected="#2ab2c5"
             keyframe_extreme="#e8b3cc"
             keyframe_extreme_selected="#f28080"
             keyframe_breakdown="#b3dbe8"
@@ -461,7 +461,7 @@
             keyframe_generated="#585858"
             keyframe_generated_selected="#a28962"
             long_key="#ffffff1f"
-            long_key_selected="#ff8c0099"
+            long_key_selected="#0083ae51"
             >
           </ThemeCommonAnim>
         </anim>
@@ -478,7 +478,7 @@
             handle_auto_clamped="#803060"
             handle_sel_auto_clamped="#f090a0"
             handle_vertex="#d9d9d9"
-            handle_vertex_select="#ff8500"
+            handle_vertex_select="#00c7ff"
             handle_vertex_size="5"
             >
           </ThemeCommonCurves>
@@ -495,23 +495,23 @@
         edge_width="1"
         gp_wire_edit="#99999980"
         gp_vertex="#000000"
-        gp_vertex_select="#ff8500"
+        gp_vertex_select="#00c7ff"
         gp_vertex_size="3"
         text_grease_pencil="#7a9b14"
-        object_selected="#ed5700"
-        object_active="#ffa028"
+        object_selected="#00dded"
+        object_active="#28c8ff"
         camera="#000000"
         empty="#000000"
         light="#00000050"
         speaker="#000000"
         vertex="#000000"
-        vertex_select="#ff7a00"
+        vertex_select="#00d1ff"
         vertex_size="3"
-        edge_select="#ff9900"
-        edge_mode_select="#ffd800"
+        edge_select="#00b2ff"
+        edge_mode_select="#0074ff"
         face="#ffffff02"
-        face_select="#ffa30033"
-        face_mode_select="#ffb70033"
+        face_select="#00a8ff33"
+        face_mode_select="#0094ff33"
         facedot_size="3"
         face_back="#ff0000b3"
         face_front="#0000ff00"
@@ -574,7 +574,7 @@
       <ThemeGraphEditor
         grid="#4b4b4bf2"
         vertex="#d9d9d9"
-        vertex_select="#ff8500"
+        vertex_select="#00c7ff"
         vertex_active="#ffffff"
         vertex_size="6"
         >
@@ -614,10 +614,10 @@
     <nla_editor>
       <ThemeNLAEditor
         grid="#4b4b4bf2"
-        active_action="#99541366"
-        active_action_unset="#4d3b174d"
-        strips="#0d0d0d"
-        strips_selected="#ff8c00"
+        active_action="#13809966"
+        active_action_unset="#17394d4d"
+        strips="#4b4b4b"
+        strips_selected="#6ca1b2"
         transition_strips="#1c2630"
         transition_strips_selected="#2e75db"
         meta_strips="#332642"
@@ -626,8 +626,8 @@
         sound_strips_selected="#1f7a7a"
         tweak="#4df31a"
         tweak_duplicate="#d90000"
-        keyframe_border="#000000ff"
-        keyframe_border_selected="#000000ff"
+        keyframe_border="#d9d9d9ff"
+        keyframe_border_selected="#d9d9d9ff"
         >
         <space>
           <ThemeSpaceGeneric
@@ -646,8 +646,8 @@
     <dopesheet_editor>
       <ThemeDopeSheet
         grid="#4b4b4bf2"
-        keyframe_border="#000000ff"
-        keyframe_border_selected="#000000ff"
+        keyframe_border="#00000000"
+        keyframe_border_selected="#00000000"
         keyframe_scale_factor="1"
         summary="#4d272766"
         anim_interpolation_linear="#94e575cc"
@@ -673,16 +673,16 @@
       <ThemeImageEditor
         grid="#4b4b4bf2"
         vertex="#d9d9d9"
-        vertex_select="#ff8500"
+        vertex_select="#00c7ff"
         vertex_size="3"
         face="#ffffff0a"
-        face_select="#ff85003c"
+        face_select="#00c7ff3c"
         face_mode_select="#00000000"
         facedot_size="3"
         editmesh_active="#ffffff40"
         wire_edit="#c0c0c0"
         edge_width="1"
-        edge_select="#ff8500"
+        edge_select="#00c7ff"
         scope_back="#727272ff"
         preview_stitch_face="#7f7f0033"
         preview_stitch_edge="#ff00ff33"
@@ -767,10 +767,10 @@
     </properties>
     <text_editor>
       <ThemeTextEditor
-        line_numbers="#777777"
-        line_numbers_background="#1d1d1d"
-        selected_text="#4d4d4d"
-        cursor="#71a8ff"
+        line_numbers="#999872"
+        line_numbers_background="#3d3d3d"
+        selected_text="#016e70"
+        cursor="#d9d9d9"
         syntax_builtin="#e62e67"
         syntax_symbols="#ff734d"
         syntax_special="#689d06"
@@ -797,10 +797,10 @@
     <node_editor>
       <ThemeNodeEditor
         grid="#4b4b4bf2"
-        node_outline="#00000000"
-        node_selected="#ed5700"
-        node_active="#4b4b4b"
-        wire="#333233f2"
+        node_outline="#4b4b4bf2"
+        node_selected="#00dded"
+        node_active="#d9d9d9"
+        wire="#4b4b4bf2"
         wire_inner="#8d8d8d"
         wire_select="#ffffffb3"
         node_backdrop="#323232f2"
@@ -845,10 +845,10 @@
     <outliner>
       <ThemeOutliner
         match="#337f33"
-        selected_highlight="#1d314d"
-        active="#334d80"
-        selected_object="#e96a00"
-        active_object="#ffaf29"
+        selected_highlight="#684e4d"
+        active="#9a7372"
+        selected_object="#dfdebd"
+        active_object="#dfdebd"
         edited_object="#00806266"
         row_alternate="#ffffff04"
         >
@@ -858,7 +858,7 @@
             title="#d9d9d9"
             text="#c3c3c3"
             text_hi="#ffffff"
-            header="#282828b3"
+            header="#333233f2"
             header_text="#eeeeee"
             header_text_hi="#ffffff"
             >
@@ -882,9 +882,9 @@
         >
         <space>
           <ThemeSpaceGeneric
-            back="#1d1d1d"
+            back="#333233f2"
             title="#d9d9d9"
-            text="#c3c3c3"
+            text="#d9d9d9"
             text_hi="#ffffff"
             header="#323232f2"
             header_text="#eeeeee"
@@ -915,15 +915,15 @@
     <console>
       <ThemeConsole
         line_output="#71a8ff"
-        line_input="#f2f2f2"
+        line_input="#d9d9d9"
         line_info="#95d600"
         line_error="#ff4d84"
-        cursor="#71a8ff"
-        select="#ffffff30"
+        cursor="#d9d9d9"
+        select="#017e70"
         >
         <space>
           <ThemeSpaceGeneric
-            back="#1d1d1d"
+            back="#333233f2"
             title="#d9d9d9"
             text="#d9d9d9"
             text_hi="#ffffff"
