@@ -1,0 +1,315 @@
+#TODO
+#blender
+#strawberry
+#tty font
+#apex
+
+#run website
+#build plugin
+#calque+borderless
+#daisy
+
+#move to repo
+
+{ config, lib, pkgs, inputs, ... }:
+let
+	extension = shortId: guid: {
+		name = guid;
+		value = {
+			install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+			installation_mode = "normal_installed";
+		};
+	};
+in
+{
+	imports = [
+		./hardware-configuration.nix
+		inputs.home-manager.nixosModules.default
+	];
+
+	environment.systemPackages = with pkgs; [
+
+		sway
+		brightnessctl
+		pavucontrol
+		swayidle
+		dunst
+		tofi
+		playerctl
+		pamixer
+		waybar
+		grim
+		flameshot
+		wdisplays
+		bluetui
+		xscreensaver
+
+		zsh
+		zsh-powerlevel10k
+
+		btop
+		killall
+		tree
+		fastfetch
+		wget
+
+		kitty
+		putty
+		github-desktop
+		neovide
+
+		kdePackages.dolphin
+		kdePackages.ark
+		megasync
+
+		(pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped {
+			extraPrefs = lib.concatLines(
+				lib.mapAttrsToList(
+					name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
+				){
+					"zen.welcome-screen.seen" = true;
+					"browser.preferences.config_warning.warningPasswordManager.dismissed" = true;
+					"browser.preferences.config_warning.warningSafeBrowsing.dismissed" = true;
+					"browser.translations.automaticallyPopup" = false;
+
+					"zen.theme.accent-color" = "#9a7372";
+					"zen.theme.gradient.show-custom-colors" = true;
+					"zen.widget.linux.transparency" = true;
+					"zen.view.grey-out-inactive-windows" = false;
+					"browser.tabs.allow_transparent_browser" = true;
+
+					"sidebar.visibility" = "hide-sidebar";
+					"zen.theme.content-element-separation" = 0;
+					"zen.theme.border-radius" = 0;
+					"zen.view.compact.enable-at-startup" = true;
+					"zen.view.compact.hide-tabbar" = true;
+					"zen.view.compact.hide-toolbar" = true;
+					"zen.view.sidebar-expanded" = false;
+
+					"font.minimum-size.x-western" = 16;
+					"font.name.monospace.x-western" = "IBM 3270 Nerd Font";
+					"font.name.sans-serif.x-western" = "IBM 3270 Nerd Font";
+					"font.name.serif.x-western" = "IBM 3270 Nerd Font";
+					"font.size.monospace.x-western" = 16;
+				}
+			);
+
+			extraPolicies = {
+				DisableTelemetry = true;
+				ExtensionSettings = builtins.listToAttrs [
+					(extension "lastpass-password-manager" "support@lastpass.com")
+				];
+				SearchEngines.Default = "ddg";
+			};
+		})
+		chromium
+
+		strawberry
+		nicotine-plus
+		vlc
+		deluge
+		mixxx
+		dolphin-emu
+
+		gimp
+		blender
+		reaper
+		inkscape
+		naps2
+		vmpk
+
+		git
+		git-lfs
+		nginx
+		#python3
+		#cmake
+		#gnumake
+		#pkg-config
+		#gcc
+		#libx11
+
+		kdePackages.qtsvg
+		kdePackages.breeze-icons
+		libsForQt5.qt5ct
+		libsForQt5.qtstyleplugin-kvantum
+		qt5.qtwayland
+		qt6.qtwayland
+		qt6Packages.qt6ct
+	];
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.allowUnfreePredicate = _: true;
+
+	boot.loader.systemd-boot.enable = true;
+	boot.loader.efi.canTouchEfiVariables = true;
+	networking.hostName = "laptop-linux";
+	time.timeZone = "Turkey";
+
+	environment.etc."ly/custom-sessions/sway.desktop".text = ''
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Sway
+Comment=Sway WM
+Exec=sway'';
+	services.displayManager.ly = {
+		enable = true;
+		package = pkgs.ly;
+		settings = {
+			allow_empty_password = true;
+			asterisk = "*";
+			auth_fails = 10;
+			bigclock = false;
+			animation = "none";
+			box_title = "null";
+			initial_info_text = "Melody Vivienne";
+			start_cmd = "setfont sun12x22";
+		};
+	};
+	security.pam.services.ly.enableGnomeKeyring = true;
+	services.gnome.gnome-keyring.enable = true;
+	security.pam.loginLimits = [{
+		domain = "@users";
+		item = "rtprio";
+		type = "-";
+		value = 1;
+	}];
+	security.polkit.enable = true;
+	users.users.mel = {
+		isNormalUser = true;
+		extraGroups = [ "wheel" ];
+		packages = with pkgs; [ ];
+	};
+	home-manager = {
+		extraSpecialArgs = { inherit inputs; };
+		users = {
+			"mel" = import ./home.nix;
+		};
+	};
+
+	hardware.bluetooth = {
+		enable = true;
+		powerOnBoot = true;
+	};
+	services.udev.packages = [ pkgs.dolphin-emu ];
+
+	#services.printing.enable = true;
+
+	services.pipewire = {
+		enable = true;
+		pulse.enable = true;
+	};
+
+	networking.networkmanager = {
+		enable = true;
+		dns = "none";
+		wifi.powersave = true;
+	};
+	networking.useDHCP = false;
+	networking.dhcpcd.enable = false;
+	networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+	services.openssh.enable = true;
+
+	services.udisks2.enable = true;
+
+	programs.dconf.enable = true;
+	qt = {
+		enable = true;
+		platformTheme = "qt5ct";
+		style = "kvantum";
+	};
+	environment.variables = {
+		QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
+		QT_PLATFORMTHEME = "qt6ct";
+		QT_PLATFORM_PLUGIN = "qt6ct";
+		QT_STYLE_OVERRIDE = "kvantum";
+		QT_QPA_PLATFORM = "wayland";
+		XDG_CURRENT_DESKTOP = "sway";
+	};
+
+	console = {
+		earlySetup = true;
+		font = "sun12x22";
+		keyMap = "us";
+		colors = [
+			"333233"
+			"d68787"
+			"5f865f"
+			"d8af5f"
+			"85add4"
+			"d7afaf"
+			"87afaf"
+			"d0d0d0"
+			"626262"
+			"d75f87"
+			"87af87"
+			"ffd787"
+			"add4fb"
+			"ffafaf"
+			"87d7d7"
+			"e4e4e4"
+		];
+	};
+	programs.zsh = {
+		enable = true;
+		enableCompletion = true;
+		autosuggestions.enable = true;
+		syntaxHighlighting.enable = true;
+
+		shellAliases = { };
+
+		ohMyZsh = {
+			enable = true;
+			plugins = [ "git" ];
+		};
+
+		histSize = 10000;
+		histFile = "$HOME/.zsh_history";
+		setOptions = [
+			"HIST_IGNORE_ALL_DUPS"
+		];
+		promptInit = ''
+			source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+			source /etc/powerlevel10k/p10k.zsh
+
+			if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+				source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+			fi
+		'';
+	};
+	environment.shellAliases.nshell = "nix-shell --run $SHELL";
+	environment.shells = [ pkgs.zsh ];
+	environment.loginShellInit = "";
+	users.defaultUserShell = pkgs.zsh;
+	system.userActivationScripts.zshrc = "touch .zshrc";
+
+	programs.neovim = {
+		enable = true;
+		defaultEditor = true;
+		configure.customRC = "source /home/mel/repos/dotfiles/.vimrc";
+	};
+
+	environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; # TODO temporary workaround
+
+	fonts.fontconfig = {
+		enable = true;
+		includeUserConf = false;
+		defaultFonts = {
+			monospace = [ "IBM 3270 Nerd Font" ];
+			sansSerif = [ "IBM 3270 Nerd Font" ];
+			serif = [ "IBM 3270 Nerd Font" ];
+		};
+		hinting = {
+			enable = true;
+			autohint = false;
+			style = "slight";
+		};
+		subpixel = {
+			lcdfilter = "none";
+			rgba = "none";
+		};
+		antialias = true;
+	};
+
+	system.stateVersion = "26.05";
+}
