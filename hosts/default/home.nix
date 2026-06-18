@@ -84,17 +84,17 @@
 	};
 
 	home.file = {
-		".config/sway/config".source = ./../../dotfiles/sway-config;
-		#".local/share/nvim/plugged/vim-airline/autoload/airline/themes/meltheme.vim".source = ./../../dotfiles/airline-theme.vim;
-		".config/dunst/dunstrc".source = ./../../dotfiles/dunstrc;
-		".config/waybar/config.jsonc".source = ./../../dotfiles/waybar-config;
-		".config/waybar/style.css".source = ./../../dotfiles/waybar-style.css;
-		".config/flameshot/flameshot.ini".source = ./../../dotfiles/flameshot.ini;
-		".config/kitty/kitty.conf".source = ./../../dotfiles/kitty.conf;
-		".config/Kvantum/KvFlatMod".source = ./../../dotfiles/KvFlatMod;
-		".config/dolphinrc".source = ./../../dotfiles/dolphinrc;
-		".config/vmpk.sourceforge.net/VMPK.conf".source = ./../../dotfiles/vmpk.conf;
-		".xscreensaver".source = ./../../dotfiles/.xscreensaver;
+		".config/sway/config".source = ./../../sway-config;
+		#".local/share/nvim/plugged/vim-airline/autoload/airline/themes/meltheme.vim".source = ./../../airline-theme.vim;
+		".config/dunst/dunstrc".source = ./../../dunstrc;
+		".config/waybar/config.jsonc".source = ./../../waybar-config;
+		".config/waybar/style.css".source = ./../../waybar-style.css;
+		".config/flameshot/flameshot.ini".source = ./../../flameshot.ini;
+		".config/kitty/kitty.conf".source = ./../../kitty.conf;
+		".config/Kvantum/KvFlatMod".source = ./../../KvFlatMod;
+		".config/dolphinrc".source = ./../../dolphinrc;
+		".config/vmpk.sourceforge.net/VMPK.conf".source = ./../../vmpk.conf;
+		".xscreensaver".source = ./../../.xscreensaver;
 		".local/share/fonts".source = /home/mel/MEGA/fonts;
 	};
 
