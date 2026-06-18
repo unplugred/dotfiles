@@ -1,0 +1,48 @@
+MenuBar=Disabled
+
+[ContextMenu]
+ShowCopyToOtherSplitView=false
+ShowDuplicateHere=false
+ShowMoveToOtherSplitView=false
+
+[DetailsMode]
+PreviewSize=16
+RightPadding=155
+
+[General]
+ShowStatusBar=FullWidth
+ShowToolTips=true
+ShowZoomSlider=true
+UseTabForSwitchingSplitView=true
+Version=202
+ViewPropsTimestamp=2026,6,17,4,6,17.97
+
+[IconsMode]
+PreviewSize=96
+
+[InformationPanel]
+dateFormat=ShortFormat
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=16
+
+[MainWindow]
+MenuBar=Disabled
+
+[MainWindow][Toolbar mainToolBar]
+IconSize=16
+ToolButtonStyle=IconOnly
+
+[PlacesPanel]
+IconSize=16
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail
+
+[Toolbar mainToolBar]
+IconSize=16
+ToolButtonStyle=IconOnly
+
+[UiSettings]
+ColorScheme=KvFlat
