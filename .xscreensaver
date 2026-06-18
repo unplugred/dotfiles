@@ -1,0 +1,26 @@
+timeout: 12:00:00
+cycle:  12:00:00
+lock:  False
+lockTimeout: 0:00:00
+passwdTimeout: 0:00:30
+splash: False
+demoCommand: xscreensaver-settings
+nice:  10
+fade:  True
+unfade:  False
+fadeSeconds: 0:00:03
+dpmsEnabled: True
+dpmsQuickOff: False
+dpmsOff: 0:30:00
+grabDesktopImages: False
+grabVideoFrames: False
+chooseRandomImages: False
+
+mode: one
+selected: 0
+
+dialogTheme: darkgray
+
+programs: \
+	GL: \
+		pipes --root --factory 0 --count 3
