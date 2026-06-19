@@ -3,13 +3,12 @@
 #strawberry
 #tty font
 #apex
+#zen
 
 #run website
 #build plugin
 #calque+borderless
 #daisy
-
-#move to repo
 
 { config, lib, pkgs, inputs, ... }:
 let
@@ -270,7 +269,7 @@ Exec=sway'';
 		];
 		promptInit = ''
 			source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-			source /etc/powerlevel10k/p10k.zsh
+			source ~/.p10k.zsh
 
 			if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
 				source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
@@ -286,7 +285,7 @@ Exec=sway'';
 	programs.neovim = {
 		enable = true;
 		defaultEditor = true;
-		configure.customRC = "source /home/mel/repos/dotfiles/.vimrc";
+		configure.customRC = "source /home/mel/repos/dotfiles/dotfiles/.vimrc";
 	};
 
 	environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; # TODO temporary workaround

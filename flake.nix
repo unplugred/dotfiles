@@ -1,6 +1,4 @@
 {
-	description = "Nixos config flake";
-
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -20,11 +18,13 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, ... }@inputs: {
-		nixosConfigurations.laptop-linux = nixpkgs.lib.nixosSystem {
-			specialArgs = {inherit inputs;};
+	outputs = { self, nixpkgs, ... } @ inputs: {
+		nixosConfigurations.linux-thinkpad = nixpkgs.lib.nixosSystem {
+			specialArgs = {
+				inherit inputs;
+			};
 			modules = [
-				./hosts/default/configuration.nix
+				/home/mel/repos/dotfiles/hosts/linux-thinkpad/configuration.nix
 				inputs.home-manager.nixosModules.default
 			];
 		};
