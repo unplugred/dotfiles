@@ -35,23 +35,23 @@ in
 		zsh
 		zsh-powerlevel10k
 
-		btop #TODO !!!
+		btop #TODO !!! store config
 		killall
 		tree
 		fastfetch
 		wget
 
 		kitty
-		putty #TODO !!!
+		putty #TODO !!! store config
 		github-desktop
 		neovide
-		#calque #TODO !!!
+		#calque #TODO !!! nix flake + theme
 
-		kdePackages.dolphin
+		kdePackages.dolphin #TODO !!! ntfs-3g
 		kdePackages.ark
 		megasync
 
-		(pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped { #TODO
+		(pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped {
 			extraPrefs = lib.concatLines(
 				lib.mapAttrsToList(
 					name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
@@ -66,6 +66,7 @@ in
 					"zen.widget.linux.transparency" = true;
 					"zen.view.grey-out-inactive-windows" = false;
 					"browser.tabs.allow_transparent_browser" = true;
+					#TODO set theme color to #191819f2
 
 					"sidebar.visibility" = "hide-sidebar";
 					"zen.theme.content-element-separation" = 0;
@@ -75,11 +76,15 @@ in
 					"zen.view.compact.hide-toolbar" = true;
 					"zen.view.sidebar-expanded" = false;
 
-					"font.minimum-size.x-western" = 16;
 					"font.name.monospace.x-western" = "IBM 3270 Nerd Font";
 					"font.name.sans-serif.x-western" = "IBM 3270 Nerd Font";
 					"font.name.serif.x-western" = "IBM 3270 Nerd Font";
+					"media.videocontrols.picture-in-picture.display-text-tracks.size" = "small";
+					"font.minimum-size.x-western" = 16;
+					"font.size.variable.x-western" = 16;
 					"font.size.monospace.x-western" = 16;
+
+					#TODO add mail, calendar, whatsapp, keep, stats
 				}
 			);
 
@@ -100,13 +105,13 @@ in
 		mixxx
 		dolphin-emu #TODO !!!
 
-		gimp #TODO !!!
-		blender #TODO
+		gimp
+		blender #TODO store config
 		reaper
 		inkscape
 		naps2
 		vmpk
-		#borderless #TODO !!!
+		#borderless #TODO !!! nix flake
 
 		git
 		git-lfs
