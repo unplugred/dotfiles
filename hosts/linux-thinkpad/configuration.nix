@@ -30,7 +30,7 @@ in
 		wdisplays
 		bluetui
 		xscreensaver
-		#apex #TODO
+		#apex #TODO !!!
 
 		zsh
 		zsh-powerlevel10k
@@ -100,7 +100,7 @@ in
 		mixxx
 		dolphin-emu #TODO !!!
 
-		gimp
+		gimp #TODO !!!
 		blender #TODO
 		reaper
 		inkscape
@@ -110,7 +110,6 @@ in
 
 		git
 		git-lfs
-		nginx #TODO !!!
 		pm2
 		#daisy #TODO !!!
 
@@ -149,7 +148,7 @@ Exec=sway'';
 			animation = "none";
 			box_title = "null";
 			initial_info_text = "Melody Vivienne";
-			start_cmd = "setfont sun12x22";
+			start_cmd = "${pkgs.kbd}/bin/setfont sun12x22";
 		};
 	};
 	security.pam.services.ly.enableGnomeKeyring = true;
@@ -234,7 +233,7 @@ Exec=sway'';
 
 	console = {
 		earlySetup = true;
-		font = "sun12x22"; #TODO
+		font = "sun12x22";
 		keyMap = "us";
 		colors = [
 			"333233"
