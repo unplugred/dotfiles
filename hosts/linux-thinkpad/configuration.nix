@@ -98,12 +98,12 @@ in
 		})
 		chromium
 
-		strawberry #TODO
+		strawberry #TODO store config
 		nicotine-plus
-		vlc #TODO !!!
+		vlc #TODO !!! store config
 		deluge
 		mixxx
-		dolphin-emu #TODO !!!
+		dolphin-emu
 
 		gimp
 		blender #TODO store config
@@ -296,6 +296,21 @@ Exec=sway'';
 		enable = true;
 		defaultEditor = true;
 		configure.customRC = "source /home/mel/repos/dotfiles/dotfiles/.vimrc";
+	};
+
+	systemd.services.pm2 = {
+		enable = true;
+		unitConfig.Type = "simple";
+		wantedBy = [ "multi-user.target" ];
+		serviceConfig = { #TODO !!! on startup
+			ExecStart = "${pkgs.pm2}/bin/pm2 startOrRestart /home/mel/repos/Unplug/ecosystem.config.js";
+			ExecReload = "${pkgs.pm2}/bin/pm2 reload all";
+			ExecStop = "${pkgs.pm2}/bin/pm2 kill";
+		};
+	};
+	services.nginx = {
+		enable = true;
+		httpConfig = builtins.readFile "/home/mel/repos/Unplug/nginx";
 	};
 
 	environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; # TODO temporary workaround
