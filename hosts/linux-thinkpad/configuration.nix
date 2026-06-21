@@ -1,15 +1,3 @@
-#TODO
-#blender
-#strawberry
-#tty font
-#apex
-#zen
-
-#run website
-#build plugin
-#calque+borderless
-#daisy
-
 { config, lib, pkgs, inputs, ... }:
 let
 	extension = shortId: guid: {
@@ -42,26 +30,28 @@ in
 		wdisplays
 		bluetui
 		xscreensaver
+		#apex #TODO
 
 		zsh
 		zsh-powerlevel10k
 
-		btop
+		btop #TODO !!!
 		killall
 		tree
 		fastfetch
 		wget
 
 		kitty
-		putty
+		putty #TODO !!!
 		github-desktop
 		neovide
+		#calque #TODO !!!
 
 		kdePackages.dolphin
 		kdePackages.ark
 		megasync
 
-		(pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped {
+		(pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped { #TODO
 			extraPrefs = lib.concatLines(
 				lib.mapAttrsToList(
 					name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
@@ -103,29 +93,26 @@ in
 		})
 		chromium
 
-		strawberry
+		strawberry #TODO
 		nicotine-plus
-		vlc
+		vlc #TODO !!!
 		deluge
 		mixxx
-		dolphin-emu
+		dolphin-emu #TODO !!!
 
 		gimp
-		blender
+		blender #TODO
 		reaper
 		inkscape
 		naps2
 		vmpk
+		#borderless #TODO !!!
 
 		git
 		git-lfs
-		nginx
-		#python3
-		#cmake
-		#gnumake
-		#pkg-config
-		#gcc
-		#libx11
+		nginx #TODO !!!
+		pm2
+		#daisy #TODO !!!
 
 		kdePackages.qtsvg
 		kdePackages.breeze-icons
@@ -225,10 +212,29 @@ Exec=sway'';
 		QT_QPA_PLATFORM = "wayland";
 		XDG_CURRENT_DESKTOP = "sway";
 	};
+	fonts.fontconfig = {
+		enable = true;
+		includeUserConf = false;
+		defaultFonts = {
+			monospace = [ "IBM 3270 Nerd Font" ];
+			sansSerif = [ "IBM 3270 Nerd Font" ];
+			serif = [ "IBM 3270 Nerd Font" ];
+		};
+		hinting = {
+			enable = true;
+			autohint = false;
+			style = "slight";
+		};
+		subpixel = {
+			lcdfilter = "none";
+			rgba = "none";
+		};
+		antialias = true;
+	};
 
 	console = {
 		earlySetup = true;
-		font = "sun12x22";
+		font = "sun12x22"; #TODO
 		keyMap = "us";
 		colors = [
 			"333233"
@@ -289,26 +295,6 @@ Exec=sway'';
 	};
 
 	environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; # TODO temporary workaround
-
-	fonts.fontconfig = {
-		enable = true;
-		includeUserConf = false;
-		defaultFonts = {
-			monospace = [ "IBM 3270 Nerd Font" ];
-			sansSerif = [ "IBM 3270 Nerd Font" ];
-			serif = [ "IBM 3270 Nerd Font" ];
-		};
-		hinting = {
-			enable = true;
-			autohint = false;
-			style = "slight";
-		};
-		subpixel = {
-			lcdfilter = "none";
-			rgba = "none";
-		};
-		antialias = true;
-	};
 
 	system.stateVersion = "26.05";
 }

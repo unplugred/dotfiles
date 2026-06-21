@@ -85,7 +85,7 @@
 
 	home.file = {
 		".config/sway/config".source = ./../../dotfiles/sway-config;
-		#".local/share/nvim/plugged/vim-airline/autoload/airline/themes/meltheme.vim".source = ./../../dotfiles/airline-theme.vim;
+		".local/share/nvim/plugged/vim-airline/autoload/airline/themes/meltheme.vim".source = ./../../dotfiles/airline-theme.vim;
 		".config/dunst/dunstrc".source = ./../../dotfiles/dunstrc;
 		".config/waybar/config.jsonc".source = ./../../dotfiles/waybar-config.jsonc;
 		".config/waybar/style.css".source = ./../../dotfiles/waybar-style.css;
