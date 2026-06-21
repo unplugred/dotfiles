@@ -72,7 +72,7 @@
 		vesktop.enable = true;
 		config = {
 			themeLinks = [
-				"https://raw.githubusercontent.com/unplugred/dotfiles/refs/heads/main/discord.css"
+				"https://raw.githubusercontent.com/unplugred/dotfiles/refs/heads/main/dotfiles/discord.css"
 			];
 			frameless = true;
 			transparent = true;
