@@ -298,6 +298,13 @@ Exec=sway'';
 		configure.customRC = "source /home/mel/repos/dotfiles/dotfiles/.vimrc";
 	};
 
+	programs.steam = {
+		enable = true;
+		#remotePlay.openFirewall = true;
+		#dedicatedServer.openFirewall = true;
+		#localNetworkGameTransfers.openFirewall = true;
+	};
+
 	systemd.services.pm2 = {
 		enable = true;
 		unitConfig.Type = "simple";
