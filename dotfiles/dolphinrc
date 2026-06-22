@@ -10,6 +10,7 @@ PreviewSize=16
 RightPadding=155
 
 [General]
+TerminalApplication=kitty
 ShowStatusBar=FullWidth
 ShowToolTips=true
 ShowZoomSlider=true
