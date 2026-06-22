@@ -30,7 +30,7 @@ in
 		wdisplays
 		bluetui
 		xscreensaver
-		#apex #TODO !!!
+		#apex #TODO
 		#waybar bluetooth #TODO !!!
 
 		zsh
@@ -44,7 +44,6 @@ in
 		wineWow64Packages.staging
 
 		kitty
-		putty #TODO !!! store config
 		github-desktop
 		neovide
 		inputs.calque.packages.${pkgs.system}.default
@@ -114,12 +113,14 @@ in
 		inkscape
 		naps2
 		vmpk
-		#zoom #TODO !!!
+		zoom-us
 		#borderless #TODO nix flake
 
 		git
 		git-lfs
 		pm2
+		filezilla
+		putty #TODO !!! store config
 
 		kdePackages.qtsvg
 		kdePackages.breeze-icons
