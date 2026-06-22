@@ -310,6 +310,11 @@ Exec=sway'';
 		#localNetworkGameTransfers.openFirewall = true;
 	};
 
+	programs.obs-studio = {
+		enable = true;
+		enableVirtualCamera = true;
+	};
+
 	systemd.services.pm2 = {
 		enable = true;
 		unitConfig.Type = "simple";
