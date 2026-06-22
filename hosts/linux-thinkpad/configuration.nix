@@ -315,5 +315,12 @@ Exec=sway'';
 
 	environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; # TODO temporary workaround
 
+	nix.gc = {
+		automatic = true;
+		dates = "weekly";
+		options = "--delete-older-than +3";
+	};
+	nix.settings.auto-optimise-store = true;
+
 	system.stateVersion = "26.05";
 }
