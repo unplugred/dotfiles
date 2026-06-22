@@ -31,6 +31,7 @@ in
 		bluetui
 		xscreensaver
 		#apex #TODO !!!
+		#waybar bluetooth #TODO !!!
 
 		zsh
 		zsh-powerlevel10k
@@ -46,7 +47,7 @@ in
 		putty #TODO !!! store config
 		github-desktop
 		neovide
-		#calque #TODO !!! nix flake + theme
+		inputs.calque.packages.${pkgs.system}.default
 
 		kdePackages.dolphin #TODO !!! ntfs-3g
 		kdePackages.ark
@@ -113,12 +114,12 @@ in
 		inkscape
 		naps2
 		vmpk
+		#zoom #TODO !!!
 		#borderless #TODO nix flake
 
 		git
 		git-lfs
 		pm2
-		#daisy #TODO !!!
 
 		kdePackages.qtsvg
 		kdePackages.breeze-icons

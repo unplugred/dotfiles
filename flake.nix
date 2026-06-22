@@ -16,6 +16,11 @@
 			url = "github:FlameFlag/nixcord";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		calque = {
+			url = "github:unplugred/calque-desktop";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { self, nixpkgs, ... } @ inputs: {
