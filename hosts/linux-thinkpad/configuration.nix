@@ -40,6 +40,7 @@ in
 		tree
 		fastfetch
 		wget
+		wineWow64Packages.staging
 
 		kitty
 		putty #TODO !!! store config
