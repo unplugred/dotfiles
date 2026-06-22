@@ -85,6 +85,7 @@ in
 					"font.size.monospace.x-western" = 16;
 
 					#TODO add mail, calendar, whatsapp, keep, stats
+					#TODO stylus theme
 				}
 			);
 
@@ -111,7 +112,7 @@ in
 		inkscape
 		naps2
 		vmpk
-		#borderless #TODO !!! nix flake
+		#borderless #TODO nix flake
 
 		git
 		git-lfs
@@ -215,6 +216,8 @@ Exec=sway'';
 		QT_STYLE_OVERRIDE = "kvantum";
 		QT_QPA_PLATFORM = "wayland";
 		XDG_CURRENT_DESKTOP = "sway";
+		EDITOR = "nvim";
+		VISUAL = "neovide";
 	};
 	fonts.fontconfig = {
 		enable = true;
@@ -288,7 +291,7 @@ Exec=sway'';
 	};
 	environment.shellAliases.nshell = "nix-shell --run $SHELL";
 	environment.shells = [ pkgs.zsh ];
-	environment.loginShellInit = "";
+	environment.localBinInPath = true;
 	users.defaultUserShell = pkgs.zsh;
 	system.userActivationScripts.zshrc = "touch .zshrc";
 

@@ -95,12 +95,11 @@
 		".config/dolphinrc".source = ./../../dotfiles/dolphinrc;
 		".config/vmpk.sourceforge.net/VMPK.conf".source = ./../../dotfiles/vmpk.conf;
 		".xscreensaver".source = ./../../dotfiles/.xscreensaver;
-		".local/share/fonts".source = /home/mel/MEGA/fonts;
-	};
 
-	home.sessionVariables = {
-		EDITOR = "neovide";
-		VISUAL = "neovide";
+		".local/share/fonts".source = /home/mel/MEGA/fonts;
+
+		".local/bin/borderless".source = "/home/mel/.local/opt/borderless";
+		".local/bin/calque".source = "/home/mel/.local/opt/calque";
 	};
 
 	programs.home-manager.enable = true;
