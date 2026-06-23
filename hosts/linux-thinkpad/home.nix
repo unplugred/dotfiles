@@ -95,6 +95,8 @@
 		".config/dolphinrc".source = ./../../dotfiles/dolphinrc;
 		".config/vmpk.sourceforge.net/VMPK.conf".source = ./../../dotfiles/vmpk.conf;
 		".config/Electron/theme.css".source = ./../../dotfiles/calque.css;
+		".config/vlc/vlcrc".source = ./../../dotfiles/vlcrc;
+		".config/vlc/vlc-qt-interface.conf".source = ./../../dotfiles/vlc-qt-interface.conf;
 		".xscreensaver".source = ./../../dotfiles/.xscreensaver;
 		".local/share/fonts".source = /home/mel/MEGA/fonts;
 	};

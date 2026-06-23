@@ -132,7 +132,7 @@ in {
 		strawberry #TODO store config
 		sonic-visualiser #TODO !!! store config
 		nicotine-plus
-		vlc #TODO !!! store config
+		vlc
 		deluge
 		mixxx
 		dolphin-emu
