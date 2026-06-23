@@ -106,6 +106,7 @@ in
 		deluge
 		mixxx
 		dolphin-emu
+		stremio-linux-shell
 
 		gimp
 		blender #TODO store config
