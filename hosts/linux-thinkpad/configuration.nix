@@ -295,9 +295,9 @@ Exec=sway'';
 	};
 	environment.shellAliases.nshell = "nix-shell --run $SHELL";
 	environment.shells = [ pkgs.zsh ];
-	environment.localBinInPath = true;
 	users.defaultUserShell = pkgs.zsh;
 	system.userActivationScripts.zshrc = "touch .zshrc";
+	environment.localBinInPath = true;
 
 	programs.neovim = {
 		enable = true;
