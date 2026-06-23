@@ -78,6 +78,7 @@ in {
 		qt5.qtwayland
 		qt6.qtwayland
 		qt6Packages.qt6ct
+		adwaita-icon-theme
 
 		# --- IO ---
 		brightnessctl
@@ -105,20 +106,20 @@ in {
 		git
 		git-lfs
 		neovide
-		inputs.calque.packages.${pkgs.system}.default
+		inputs.calque.packages.${pkgs.stdenv.hostPlatform.system}.default
 		pm2
 		filezilla
-		putty #TODO !!! store config
+		putty
 		chromium
 
 		# --- CREATION ---
-		blender #TODO store config
+		blender
 		gimp
 		inkscape
 		naps2
 		grim
 		flameshot
-		inputs.borderless.packages.${pkgs.system}.default
+		inputs.borderless.packages.${pkgs.stdenv.hostPlatform.system}.default
 		reaper
 		orca-c
 		vmpk
