@@ -24,6 +24,11 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/mnt/nvme0n1p3" =
+    { device = "/dev/disk/by-uuid/CEA4DBA2A4DB8B7B";
+      fsType = "ntfs";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/19dc127d-4ec5-4f11-96b5-df56143cd580"; }
     ];

@@ -47,7 +47,7 @@ in
 		neovide
 		inputs.calque.packages.${pkgs.system}.default
 
-		kdePackages.dolphin #TODO !!! ntfs-3g
+		kdePackages.dolphin
 		kdePackages.ark
 		megasync
 
@@ -205,6 +205,9 @@ Exec=sway'';
 	services.openssh.enable = true;
 
 	services.udisks2.enable = true;
+	fileSystems."/mnt/nvme0n1p3".options = [
+		"uid=1000"
+	];
 
 	programs.dconf.enable = true;
 	qt = {
