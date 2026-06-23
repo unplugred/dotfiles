@@ -97,6 +97,7 @@
 		".config/Electron/theme.css".source = ./../../dotfiles/calque.css;
 		".config/vlc/vlcrc".source = ./../../dotfiles/vlcrc;
 		".config/vlc/vlc-qt-interface.conf".source = ./../../dotfiles/vlc-qt-interface.conf;
+		".config/btop/btop.conf".source = ./../../dotfiles/btop.conf;
 		".xscreensaver".source = ./../../dotfiles/.xscreensaver;
 		".local/share/fonts".source = /home/mel/MEGA/fonts;
 	};
