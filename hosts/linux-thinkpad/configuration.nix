@@ -115,7 +115,7 @@ in
 		naps2
 		vmpk
 		zoom-us
-		#borderless #TODO nix flake
+		inputs.borderless.packages.${pkgs.system}.default
 
 		git
 		git-lfs

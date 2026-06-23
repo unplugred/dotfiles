@@ -94,7 +94,7 @@
 		".config/Kvantum/KvFlatMod".source = ./../../KvFlatMod;
 		".config/dolphinrc".source = ./../../dotfiles/dolphinrc;
 		".config/vmpk.sourceforge.net/VMPK.conf".source = ./../../dotfiles/vmpk.conf;
-		".config/calque/theme.css".source = ./../../dotfiles/calque.css;
+		".config/Electron/theme.css".source = ./../../dotfiles/calque.css;
 		".xscreensaver".source = ./../../dotfiles/.xscreensaver;
 		".local/share/fonts".source = /home/mel/MEGA/fonts;
 	};

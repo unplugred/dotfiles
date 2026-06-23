@@ -20,7 +20,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+f exec dolphin
 bindsym $mod+Shift+n exec neovide
 bindsym $mod+Shift+z exec zen
-bindsym $mod+Shift+c exec Calque --no-sandbox
+bindsym $mod+Shift+c exec calque --no-sandbox
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -132,6 +132,7 @@ for_window {
 
 	[app_id="red.unplug."] floating enable
 	[app_id="calque"] floating enable; border pixel 3
+	[app_id="electron" title="^Calque$"] floating enable; border pixel 3
 	[app_id="pavucontrol"] floating enable
 	[app_id="wdisplays"] floating enable
 	[app_id="net.sourceforge.VMPK"] floating enable

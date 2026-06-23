@@ -21,6 +21,11 @@
 			url = "github:unplugred/calque-desktop";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		borderless = {
+			url = "github:unplugred/borderless";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { self, nixpkgs, ... } @ inputs: {
