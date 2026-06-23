@@ -130,11 +130,11 @@ for_window {
 	[window_role="dialog"] floating enable
 	[window_type="dialog"] floating enable
 
-	[app_id="borderless"] floating enable
-	[title="^Calque$"] floating enable; border pixel 3
+	[app_id="red.unplug."] floating enable
+	[app_id="calque"] floating enable; border pixel 3
 	[app_id="pavucontrol"] floating enable
 	[app_id="wdisplays"] floating enable
-	[title="^Virtual MIDI Piano Keyboard$"] floating enable
+	[app_id="net.sourceforge.VMPK"] floating enable
 	[app_id="zen" title="^Picture-in-Picture$"] floating enable, sticky enable
 	[title="^flameshot$"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 	[class="REAPER"] floating enable
