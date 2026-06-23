@@ -49,6 +49,7 @@ let
 				DisableTelemetry = true;
 				ExtensionSettings = builtins.listToAttrs [
 					(extension "lastpass-password-manager" "support@lastpass.com")
+					(extension "styl-us" "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}")
 				];
 				SearchEngines.Default = "ddg";
 			};
