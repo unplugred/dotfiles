@@ -255,6 +255,26 @@ Exec=sway'';
 	services.udisks2.enable = true;
 	fileSystems."/mnt/nvme0n1p3".options = [ "uid=1000" ]; #TODO not working
 
+	hardware.spacenavd.enable = true;
+	# blender config: #TODO find a way to do this declaratively
+	# | set theme
+	# + input
+	#   + ndof
+	#     | pan sensitivity:   8
+	#     | orbit sensitivity: 4
+	#     | invert pan:        x y z
+	#     | invert rotate:     x y
+	# + navigation
+	#   + orbit & pan
+	#     | orbit around selection
+	#   + zoom
+	#     | zoom to mouse position
+	# + keymap
+	#   | set 3d cursor: disable
+	# + file paths
+	#   + data
+	#     | fonts: ~/.local/share/fonts
+
 	programs.dconf.enable = true;
 	qt = {
 		enable = true;
