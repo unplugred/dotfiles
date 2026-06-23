@@ -7,51 +7,7 @@ let
 			installation_mode = "normal_installed";
 		};
 	};
-in
-{
-	imports = [
-		./hardware-configuration.nix
-		inputs.home-manager.nixosModules.default
-	];
-
-	environment.systemPackages = with pkgs; [
-
-		sway
-		brightnessctl
-		pavucontrol
-		swayidle
-		dunst
-		tofi
-		playerctl
-		pamixer
-		waybar
-		grim
-		flameshot
-		wdisplays
-		bluetui
-		xscreensaver
-		#apex #TODO
-
-		zsh
-		zsh-powerlevel10k
-
-		btop #TODO !!! store config
-		killall
-		tree
-		fastfetch
-		wget
-		wineWow64Packages.staging
-
-		kitty
-		github-desktop
-		neovide
-		inputs.calque.packages.${pkgs.system}.default
-
-		kdePackages.dolphin
-		kdePackages.ark
-		megasync
-
-		(pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped {
+	zen-browser = pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped {
 			extraPrefs = lib.concatLines(
 				lib.mapAttrsToList(
 					name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
@@ -96,9 +52,78 @@ in
 				];
 				SearchEngines.Default = "ddg";
 			};
-		})
+	};
+in
+{
+	imports = [
+		./hardware-configuration.nix
+		inputs.home-manager.nixosModules.default
+	];
+
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.allowUnfreePredicate = _: true;
+	environment.systemPackages = with pkgs; [
+
+		# --- RICE ---
+		sway
+		swayidle
+		waybar
+		tofi
+		dunst
+		xscreensaver
+		kdePackages.qtsvg
+		kdePackages.breeze-icons
+		libsForQt5.qt5ct
+		libsForQt5.qtstyleplugin-kvantum
+		qt5.qtwayland
+		qt6.qtwayland
+		qt6Packages.qt6ct
+
+		# --- IO ---
+		brightnessctl
+		wdisplays
+		bluetui
+		playerctl
+		pamixer
+		pavucontrol
+		#pipewire mixer TODO !!!
+		#plover #TODO !!!
+		#apex-tux #TODO
+
+		# --- CLI TOOLS ---
+		zsh
+		zsh-powerlevel10k
+		btop #TODO !!! store config
+		killall
+		tree
+		fastfetch
+		wget
+
+		# --- DEVELOPMENT ---
+		kitty
+		github-desktop
+		git
+		git-lfs
+		neovide
+		inputs.calque.packages.${pkgs.system}.default
+		pm2
+		filezilla
+		putty #TODO !!! store config
 		chromium
 
+		# --- CREATION ---
+		gimp
+		blender #TODO store config
+		reaper
+		inkscape
+		naps2
+		vmpk
+		grim
+		flameshot
+		inputs.borderless.packages.${pkgs.system}.default
+
+		# --- MEDIA ---
 		strawberry #TODO store config
 		nicotine-plus
 		vlc #TODO !!! store config
@@ -107,32 +132,49 @@ in
 		dolphin-emu
 		stremio-linux-shell
 
-		gimp
-		blender #TODO store config
-		reaper
-		inkscape
-		naps2
-		vmpk
+		# --- OTHER ---
 		zoom-us
-		inputs.borderless.packages.${pkgs.system}.default
+		wineWow64Packages.staging
+		zen-browser
+		kdePackages.dolphin
+		kdePackages.ark
+		megasync
 
-		git
-		git-lfs
-		pm2
-		filezilla
-		putty #TODO !!! store config
-
-		kdePackages.qtsvg
-		kdePackages.breeze-icons
-		libsForQt5.qt5ct
-		libsForQt5.qtstyleplugin-kvantum
-		qt5.qtwayland
-		qt6.qtwayland
-		qt6Packages.qt6ct
 	];
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
-	nixpkgs.config.allowUnfree = true;
-	nixpkgs.config.allowUnfreePredicate = _: true;
+
+	programs.neovim = {
+		enable = true;
+		defaultEditor = true;
+		configure.customRC = "source /home/mel/repos/dotfiles/dotfiles/.vimrc";
+	};
+
+	programs.steam = {
+		enable = true;
+		#remotePlay.openFirewall = true;
+		#dedicatedServer.openFirewall = true;
+		#localNetworkGameTransfers.openFirewall = true;
+	};
+
+	programs.obs-studio = {
+		enable = true;
+		enableVirtualCamera = true;
+	};
+
+	systemd.services.pm2 = {
+		enable = true;
+		unitConfig.Type = "simple";
+		wantedBy = [ "multi-user.target" ];
+		serviceConfig = { #TODO !!! on startup
+			#ExecStart = "${pkgs.pm2}/bin/pm2 startOrRestart /home/mel/repos/unplug/ecosystem.config.js";
+			ExecStart = "${pkgs.pm2}/bin/pm2 resurrect";
+			ExecReload = "${pkgs.pm2}/bin/pm2 reload all";
+			ExecStop = "${pkgs.pm2}/bin/pm2 kill";
+		};
+	};
+	services.nginx = {
+		enable = true;
+		httpConfig = builtins.readFile "/home/mel/repos/unplug/nginx";
+	};
 
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
@@ -205,9 +247,7 @@ Exec=sway'';
 	services.openssh.enable = true;
 
 	services.udisks2.enable = true;
-	fileSystems."/mnt/nvme0n1p3".options = [
-		"uid=1000"
-	];
+	fileSystems."/mnt/nvme0n1p3".options = [ "uid=1000" ]; #TODO not working
 
 	programs.dconf.enable = true;
 	qt = {
@@ -301,40 +341,7 @@ Exec=sway'';
 	system.userActivationScripts.zshrc = "touch .zshrc";
 	environment.localBinInPath = true;
 
-	programs.neovim = {
-		enable = true;
-		defaultEditor = true;
-		configure.customRC = "source /home/mel/repos/dotfiles/dotfiles/.vimrc";
-	};
-
-	programs.steam = {
-		enable = true;
-		#remotePlay.openFirewall = true;
-		#dedicatedServer.openFirewall = true;
-		#localNetworkGameTransfers.openFirewall = true;
-	};
-
-	programs.obs-studio = {
-		enable = true;
-		enableVirtualCamera = true;
-	};
-
-	systemd.services.pm2 = {
-		enable = true;
-		unitConfig.Type = "simple";
-		wantedBy = [ "multi-user.target" ];
-		serviceConfig = { #TODO !!! on startup
-			ExecStart = "${pkgs.pm2}/bin/pm2 startOrRestart /home/mel/repos/Unplug/ecosystem.config.js";
-			ExecReload = "${pkgs.pm2}/bin/pm2 reload all";
-			ExecStop = "${pkgs.pm2}/bin/pm2 kill";
-		};
-	};
-	services.nginx = {
-		enable = true;
-		httpConfig = builtins.readFile "/home/mel/repos/Unplug/nginx";
-	};
-
-	environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; # TODO temporary workaround
+	environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; #TODO temporary workaround
 
 	nix.gc = {
 		automatic = true;
