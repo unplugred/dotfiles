@@ -53,8 +53,7 @@ let
 				SearchEngines.Default = "ddg";
 			};
 	};
-in
-{
+in {
 	imports = [
 		./hardware-configuration.nix
 		inputs.home-manager.nixosModules.default
@@ -87,7 +86,7 @@ in
 		playerctl
 		pamixer
 		pavucontrol
-		#pipewire mixer TODO !!!
+		qpwgraph
 		#plover #TODO !!!
 		#apex-tux #TODO
 
@@ -113,18 +112,25 @@ in
 		chromium
 
 		# --- CREATION ---
-		gimp
 		blender #TODO store config
-		reaper
+		gimp
 		inkscape
 		naps2
-		vmpk
 		grim
 		flameshot
 		inputs.borderless.packages.${pkgs.system}.default
+		reaper
+		orca-c
+		vmpk
+		fontforge-gtk
+		imagemagick_light
+		libwebp
+		ffmpeg
+		exiftool
 
 		# --- MEDIA ---
 		strawberry #TODO store config
+		sonic-visualiser #TODO !!! store config
 		nicotine-plus
 		vlc #TODO !!! store config
 		deluge
