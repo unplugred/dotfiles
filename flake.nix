@@ -34,7 +34,7 @@
 				inherit inputs;
 			};
 			modules = [
-				/home/mel/repos/dotfiles/hosts/linux-thinkpad/configuration.nix
+				./hosts/linux-thinkpad/configuration.nix
 				inputs.home-manager.nixosModules.default
 			];
 		};
