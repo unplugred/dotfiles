@@ -31,7 +31,6 @@ in
 		bluetui
 		xscreensaver
 		#apex #TODO
-		#waybar bluetooth #TODO !!!
 
 		zsh
 		zsh-powerlevel10k
