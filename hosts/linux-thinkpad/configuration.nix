@@ -183,8 +183,26 @@ in {
 		httpConfig = builtins.readFile "/home/mel/repos/unplug/nginx";
 	};
 
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
+	boot.loader = {
+		limine = {
+			enable = true;
+			efiSupport = true;
+			extraEntries = ''
+				/Windows
+					protocol: efi
+					path: uuid(c4750b12-7afc-42f1-bdf8-d871ac773119):/EFI/Microsoft/Boot/bootmgfw.efi
+			'';
+			style.wallpapers = [ /home/mel/repos/dotfiles/dotfiles/bootloader.jpg ];
+			style.interface = {
+				branding = "-- WELCOME --";
+				brandingColor = "ffffff";
+				helpColor = "ffffff";
+				helpColorBright = "ffffff";
+				helpHidden = true;
+			};
+		};
+		efi.canTouchEfiVariables = true;
+	};
 	networking.hostName = "laptop-linux";
 	time.timeZone = "Turkey";
 
@@ -261,7 +279,8 @@ Exec=sway'';
 	''; # plover fix
 
 	services.udisks2.enable = true;
-	fileSystems."/mnt/nvme0n1p3".options = [ "uid=1000" ]; #TODO not working
+	fileSystems."/mnt/nvme0n1p3".options = [ "uid=1000" ];
+	boot.supportedFilesystems = [ "ntfs" ];
 
 	hardware.spacenavd.enable = true;
 	# blender config: #TODO find a way to do this declaratively
