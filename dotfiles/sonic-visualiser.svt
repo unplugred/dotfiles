@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sonic-visualiser>
+<sv>
+<data>
+  <model id="0" name="placeholder" sampleRate="44100" type="wavefile" file=":samples/silent.wav" mainModel="true"/>
+  <playparameters mute="false" pan="0" gain="1" clipId="" model="0">
+  </playparameters>
+  <layer id="1" type="timeruler" name="Ruler" model="0"  colourName="White" colour="#ffffff" darkBackground="true" />
+  <layer id="2" type="waveform" name="Waveform" model="0"  gain="1" showMeans="1" greyscale="1" channelMode="0" channel="-1" scale="0" middleLineHeight="0.5" aggressive="0" autoNormalize="0" oversampling="1" colourName="Bright Blue" colour="#1e96ff" darkBackground="true" />
+  <layer id="3" type="waveform" name="Waveform &lt;2&gt;" model="0"  gain="1" showMeans="1" greyscale="1" channelMode="0" channel="-1" scale="0" middleLineHeight="0.5" aggressive="0" autoNormalize="0" oversampling="0" colourName="Bright Blue" colour="#1e96ff" darkBackground="true" />
+  <layer id="4" type="spectrogram" name="Spectrogram" model="0"  channel="-1" windowSize="1024" windowHopLevel="2" oversampling="1" gain="1" threshold="0" minFrequency="10" maxFrequency="0" colourScale="2" colourRotation="0" frequencyScale="0" frequencyMapping="0" binDisplay="0" smooth="true" opaque="true" colourMap="Magma" colourScheme="1" columnNormalization="none" normalizeColumns="false" normalizeVisibleArea="false" />
+  <layer id="5" type="spectrogram" name="Spectrogram &lt;2&gt;" model="0"  channel="-1" windowSize="4096" windowHopLevel="5" oversampling="1" gain="1" threshold="1e-08" minFrequency="40" maxFrequency="2000" colourScale="0" colourRotation="0" frequencyScale="1" frequencyMapping="2" binDisplay="2" smooth="true" opaque="true" colourMap="Magma" colourScheme="1" columnNormalization="peak" normalizeColumns="true" normalizeVisibleArea="false" />
+  <layer id="6" type="spectrum" name="Spectrum" model="0"  windowSize="4096" windowHopLevel="3" oversampling="1" showPeaks="false"  energyScale="2" samplingMode="1" plotStyle="3" binScale="1" gain="1" threshold="0.000199526" normalize="false" minbin="1" maxbin="2049" fillColourMap="Cividis" colourScheme="6"  colourName="Bright Blue" colour="#1e96ff" darkBackground="true" />
+  <layer id="7" type="timeruler" name="Ruler &lt;2&gt;" model="0"  colourName="White" colour="#ffffff" darkBackground="true" />
+  <layer id="8" type="waveform" name="Waveform &lt;3&gt;" model="0"  gain="1" showMeans="1" greyscale="1" channelMode="0" channel="-1" scale="0" middleLineHeight="0.5" aggressive="0" autoNormalize="0" oversampling="1" colourName="Bright Blue" colour="#1e96ff" darkBackground="true" />
+  <layer id="9" type="waveform" name="Waveform &lt;4&gt;" model="0"  gain="1" showMeans="1" greyscale="1" channelMode="0" channel="-1" scale="0" middleLineHeight="0.5" aggressive="0" autoNormalize="0" oversampling="1" colourName="Bright Blue" colour="#1e96ff" darkBackground="true" />
+</data>
+<display>
+  <window width="954" height="1057"/>
+  <view centre="7101696" zoom="448" deepZoom="1" followPan="1" followZoom="0" tracking="scroll"  type="pane" centreLineVisible="1" height="184" >
+    <layer id="5" type="spectrogram" name="Spectrogram &lt;2&gt;" model="0" visible="true"/>
+  </view>
+  <view centre="7101696" zoom="192" deepZoom="1" followPan="1" followZoom="0" tracking="scroll"  type="pane" centreLineVisible="1" height="184" >
+    <layer id="4" type="spectrogram" name="Spectrogram" model="0" visible="true"/>
+  </view>
+  <view centre="7101696" zoom="896" deepZoom="1" followPan="1" followZoom="0" tracking="scroll"  type="pane" centreLineVisible="1" height="183" >
+    <layer id="6" type="spectrum" name="Spectrum" model="0" visible="true"/>
+    <layer id="7" type="timeruler" name="Ruler &lt;2&gt;" model="0" visible="true"/>
+  </view>
+  <view centre="7101696" zoom="1" deepZoom="1" followPan="1" followZoom="0" tracking="scroll"  type="pane" centreLineVisible="1" height="184" >
+    <layer id="8" type="waveform" name="Waveform &lt;3&gt;" model="0" visible="true"/>
+  </view>
+  <view centre="7101696" zoom="448" deepZoom="1" followPan="1" followZoom="0" tracking="scroll"  type="pane" centreLineVisible="1" height="184" >
+    <layer id="1" type="timeruler" name="Ruler" model="0" visible="true"/>
+    <layer id="9" type="waveform" name="Waveform &lt;4&gt;" model="0" visible="true"/>
+  </view>
+</display>
+<selections >
+</selections>
+</sv>

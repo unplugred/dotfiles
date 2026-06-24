@@ -103,21 +103,22 @@
 	};
 
 	home.file = {
-		".config/sway/config".source = ./../../dotfiles/sway-config;
-		".local/share/nvim/plugged/vim-airline/autoload/airline/themes/meltheme.vim".source = ./../../dotfiles/airline-theme.vim;
-		".config/dunst/dunstrc".source = ./../../dotfiles/dunstrc;
-		".config/waybar/config.jsonc".source = ./../../dotfiles/waybar-config.jsonc;
-		".config/waybar/style.css".source = ./../../dotfiles/waybar-style.css;
-		".config/flameshot/flameshot.ini".source = ./../../dotfiles/flameshot.ini;
-		".config/kitty/kitty.conf".source = ./../../dotfiles/kitty.conf;
-		".config/Kvantum/KvFlatMod".source = ./../../KvFlatMod;
-		".config/dolphinrc".source = ./../../dotfiles/dolphinrc;
-		".config/vmpk.sourceforge.net/VMPK.conf".source = ./../../dotfiles/vmpk.conf;
-		".config/Electron/theme.css".source = ./../../dotfiles/calque.css;
-		".config/vlc/vlcrc".source = ./../../dotfiles/vlcrc;
-		".config/vlc/vlc-qt-interface.conf".source = ./../../dotfiles/vlc-qt-interface.conf;
-		".config/btop/btop.conf".source = ./../../dotfiles/btop.conf;
-		".xscreensaver".source = ./../../dotfiles/.xscreensaver;
+		".config/sway/config".source = /home/mel/repos/dotfiles/dotfiles/sway-config;
+		".local/share/nvim/plugged/vim-airline/autoload/airline/themes/meltheme.vim".source = /home/mel/repos/dotfiles/dotfiles/airline-theme.vim;
+		".config/dunst/dunstrc".source = /home/mel/repos/dotfiles/dotfiles/dunstrc;
+		".config/waybar/config.jsonc".source = /home/mel/repos/dotfiles/dotfiles/waybar-config.jsonc;
+		".config/waybar/style.css".source = /home/mel/repos/dotfiles/dotfiles/waybar-style.css;
+		".config/flameshot/flameshot.ini".source = /home/mel/repos/dotfiles/dotfiles/flameshot.ini;
+		".config/kitty/kitty.conf".source = /home/mel/repos/dotfiles/dotfiles/kitty.conf;
+		".config/Kvantum/KvFlatMod".source = /home/mel/repos/dotfiles/KvFlatMod;
+		".config/dolphinrc".source = /home/mel/repos/dotfiles/dotfiles/dolphinrc;
+		".config/vmpk.sourceforge.net/VMPK.conf".source = /home/mel/repos/dotfiles/dotfiles/vmpk.conf;
+		".config/Electron/theme.css".source = /home/mel/repos/dotfiles/dotfiles/calque.css;
+		".config/vlc/vlcrc".source = /home/mel/repos/dotfiles/dotfiles/vlcrc;
+		".config/vlc/vlc-qt-interface.conf".source = /home/mel/repos/dotfiles/dotfiles/vlc-qt-interface.conf;
+		".config/btop/btop.conf".source = /home/mel/repos/dotfiles/dotfiles/btop.conf;
+		".local/share/sonic-visualiser/Sonic Visualiser/templates/melody.svt".source = /home/mel/repos/dotfiles/dotfiles/sonic-visualiser.svt;
+		".xscreensaver".source = /home/mel/repos/dotfiles/dotfiles/.xscreensaver;
 		".local/share/fonts".source = /home/mel/MEGA/fonts;
 	};
 
