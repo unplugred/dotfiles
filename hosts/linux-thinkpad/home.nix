@@ -102,6 +102,37 @@
 		};
 	};
 
+	programs.vscodium = {
+		enable = true;
+		package = pkgs.vscodium.fhs;
+		profiles.default = {
+			extensions = with pkgs.vscode-extensions; [
+				vscodevim.vim
+			];
+			userSettings = {
+				chat.disableAIFeatures = true;
+				vim.enableNeovim = true;
+				editor.fontSize = 16;
+				workbench.sideBar.experimental.fontSize = 16;
+				workbench.statusBar.experimental.fontSize = 16;
+				workbench.tabs.experimental.fontSize = 16;
+				workbench.experimental.fontSize = 16;
+				debug.console.fontSize = 16;
+				terminal.integrated.fontSize = 16;
+				editor.lineHeight = 1;
+				debug.console.lineHeight = 1;
+				terminal.integrated.lineHeight = 1;
+				terminal.integrated.fontLigatures.enabled = true;
+				editor.renderWhitespace = "all";
+				editor.cursorSmoothCaretAnimation = true;
+				editor.smoothScrolling = true;
+				terminal.integrated.smoothScrolling = true;
+				editor.roundedSelection = false;
+				workbench.shadows = false;
+			};
+		};
+	};
+
 	home.file = {
 		".config/sway/config".source = /home/mel/repos/dotfiles/dotfiles/sway-config;
 		".local/share/nvim/plugged/vim-airline/autoload/airline/themes/meltheme.vim".source = /home/mel/repos/dotfiles/dotfiles/airline-theme.vim;
