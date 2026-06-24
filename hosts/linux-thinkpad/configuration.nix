@@ -89,13 +89,12 @@ in {
 		pamixer
 		pavucontrol
 		qpwgraph
-		#plover #TODO !!!
 		#apex-tux #TODO
 
 		# --- CLI TOOLS ---
 		zsh
 		zsh-powerlevel10k
-		btop #TODO !!! store config
+		btop
 		killall
 		tree
 		fastfetch
@@ -221,7 +220,10 @@ Exec=sway'';
 	security.polkit.enable = true;
 	users.users.mel = {
 		isNormalUser = true;
-		extraGroups = [ "wheel" ];
+		extraGroups = [
+			"wheel" # sudo
+			"input" # plover
+		];
 		packages = with pkgs; [ ];
 	};
 	home-manager = {
@@ -253,6 +255,10 @@ Exec=sway'';
 	networking.dhcpcd.enable = false;
 	networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
 	services.openssh.enable = true;
+
+	services.udev.extraRules = ''
+		KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
+	''; # plover fix
 
 	services.udisks2.enable = true;
 	fileSystems."/mnt/nvme0n1p3".options = [ "uid=1000" ]; #TODO not working

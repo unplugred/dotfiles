@@ -124,6 +124,7 @@ output HDMI-A-2 $bgcmd mode 1920x1080@60Hz position 1080 320
 output eDP-1 $bgcmd mode 1366x768 position 0 0
 output DP-4 $bgcmd
 
+# swaymsg -t get_tree
 for_window {
 	[window_role="pop-up"] floating enable
 	[window_role="bubble"] floating enable
@@ -140,6 +141,7 @@ for_window {
 	[title="^flameshot$"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 	[class="REAPER"] floating enable
 	[class="REAPER" title="REAPER v"] floating disable
+	[app_id="org.openstenoproject.python3"] floating enable
 
 	[class="Plastic Funeral" instance="Plastic Funeral"] floating enable
 	[class="VU" instance="VU"] floating enable
