@@ -130,9 +130,10 @@ in {
 		exiftool
 
 		# --- MEDIA ---
-		strawberry #TODO store config
-		sonic-visualiser #TODO !!! store config
+		strawberry
+		sonic-visualiser
 		nicotine-plus
+		puddletag
 		vlc
 		deluge
 		mixxx
