@@ -170,13 +170,24 @@ in {
 
 	systemd.services.pm2 = {
 		enable = true;
-		unitConfig.Type = "simple";
 		wantedBy = [ "multi-user.target" ];
-		serviceConfig = { #TODO !!! on startup
-			#ExecStart = "${pkgs.pm2}/bin/pm2 startOrRestart /home/mel/repos/unplug/ecosystem.config.js";
+		after = [ "network.target" ];
+		environment = {
+			HOME = "/home/mel";
+			PM2_HOME = "/home/mel/.pm2";
+		};
+		serviceConfig = {
+			WorkingDirectory = "/home/mel";
+			User = "mel";
+
+			Type = "forking";
 			ExecStart = "${pkgs.pm2}/bin/pm2 resurrect";
 			ExecReload = "${pkgs.pm2}/bin/pm2 reload all";
 			ExecStop = "${pkgs.pm2}/bin/pm2 kill";
+
+			RemainAfterExit = "yes";
+			Restart = "on-failure";
+			RestartSec = "10s";
 		};
 	};
 	services.nginx = {
@@ -193,13 +204,15 @@ in {
 					protocol: efi
 					path: uuid(c4750b12-7afc-42f1-bdf8-d871ac773119):/EFI/Microsoft/Boot/bootmgfw.efi
 			'';
-			style.wallpapers = [ /home/mel/repos/dotfiles/dotfiles/bootloader.jpg ];
-			style.interface = {
-				branding = "-- WELCOME --";
-				brandingColor = "ffffff";
-				helpColor = "ffffff";
-				helpColorBright = "ffffff";
-				helpHidden = true;
+			style = {
+				wallpapers = [ /home/mel/repos/dotfiles/dotfiles/bootloader.jpg ];
+				graphicalTerminal.background = "ff000000";
+				graphicalTerminal.foreground = "ffffff";
+				interface.brandingColor = "ffffff";
+				interface.helpColor = "ffffff";
+				interface.helpColorBright = "ffffff";
+				interface.branding = "";
+				interface.helpHidden = true;
 			};
 		};
 		efi.canTouchEfiVariables = true;
