@@ -111,6 +111,7 @@ in {
 		filezilla
 		putty
 		chromium
+		direnv
 
 		# --- CREATION ---
 		blender
@@ -392,7 +393,7 @@ Exec=sway'';
 
 		ohMyZsh = {
 			enable = true;
-			plugins = [ "git" ];
+			plugins = [ "git" "direnv" ];
 		};
 
 		histSize = 10000;
