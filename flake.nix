@@ -17,6 +17,11 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		nix-flatpak = {
+			url = "github:gmodena/nix-flatpak/?ref=latest";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		plover-flake = {
 			url = "github:openstenoproject/plover-flake";
 			inputs.nixpkgs.follows = "nixpkgs";

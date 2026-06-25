@@ -58,6 +58,7 @@ in {
 	imports = [
 		./hardware-configuration.nix
 		inputs.home-manager.nixosModules.default
+		inputs.nix-flatpak.nixosModules.nix-flatpak
 	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -102,7 +103,6 @@ in {
 
 		# --- DEVELOPMENT ---
 		kitty
-		github-desktop
 		git
 		git-lfs
 		neovide
@@ -149,6 +149,13 @@ in {
 		megasync
 
 	];
+	xdg.portal.enable = true; # for nix-flatpak
+	services.flatpak = {
+		enable = true;
+		packages = [
+			"org.gitfourchette.gitfourchette"
+		];
+	};
 
 	programs.neovim = {
 		enable = true;
