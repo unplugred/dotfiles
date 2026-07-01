@@ -47,3 +47,6 @@ ToolButtonStyle=IconOnly
 
 [UiSettings]
 ColorScheme=KvFlat
+
+[Icons]
+Theme=YAMIS

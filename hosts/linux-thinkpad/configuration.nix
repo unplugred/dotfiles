@@ -125,7 +125,7 @@ in {
 		orca-c
 		vmpk
 		fontforge-gtk
-		imagemagick_light
+		imagemagick
 		libwebp
 		ffmpeg
 		exiftool
@@ -225,7 +225,7 @@ in {
 		};
 		efi.canTouchEfiVariables = true;
 	};
-	networking.hostName = "laptop-linux";
+	networking.hostName = "linux-thinkpad";
 	time.timeZone = "Turkey";
 
 	environment.etc."ly/custom-sessions/sway.desktop".text = ''
