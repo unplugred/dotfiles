@@ -18,7 +18,7 @@
 		style.name = "kvantum";
 		qt5ctSettings = {
 			Appearance = {
-				icon_theme = "YAMIS";
+				icon_theme = "Suru++-Aspr\\xf3mauros";
 				custom_palette = true;
 				color_scheme_path = "/home/mel/.config/qt5ct/style-colors.conf";
 				style = "kvantum-dark";
@@ -30,7 +30,7 @@
 		};
 		qt6ctSettings = {
 			Appearance = {
-				icon_theme = "YAMIS";
+				icon_theme = "Suru++-Aspr\\xf3mauros";
 				custom_palette = true;
 				color_scheme_path = "/home/mel/.config/qt6ct/style-colors.conf";
 				style = "kvantum-dark";

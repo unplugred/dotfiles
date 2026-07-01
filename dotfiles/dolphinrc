@@ -46,7 +46,7 @@ IconSize=16
 ToolButtonStyle=IconOnly
 
 [UiSettings]
-ColorScheme=KvFlat
+ColorScheme=Default
 
 [Icons]
-Theme=YAMIS
+Theme=Suru++-Asprómauros
