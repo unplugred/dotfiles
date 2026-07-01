@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=arc-mod
+Comment=
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=arc-mod
+IconTheme=Suru++-Asprómauros
+CursorTheme=DMZ-Black
+ButtonLayout=menu:minimize,maximize,close

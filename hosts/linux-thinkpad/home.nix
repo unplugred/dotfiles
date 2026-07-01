@@ -54,17 +54,14 @@
 			size = 12;
 		};
 		colorScheme = "dark";
-		theme = {
-			name = "Adwaita-dark";
-			package = pkgs.gnome-themes-extra;
-		};
+		theme.name = "arc-mod";
 	};
 	dconf = {
 		enable = true;
 		settings."org/gnome/desktop/interface" = {
 			color-scheme = "prefer-dark";
 			font-name = "IBM 3270 Nerd Font 12";
-			gtk-theme = "Adwaita-dark";
+			gtk-theme = "arc-mod";
 		};
 	};
 
