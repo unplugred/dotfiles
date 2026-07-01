@@ -149,7 +149,6 @@
 		".xscreensaver".source = /home/mel/repos/dotfiles/dotfiles/.xscreensaver;
 
 		".local/share/fonts".source = /home/mel/MEGA/fonts;
-		".local/bin/gitfourchette".source = /var/lib/flatpak/app/org.gitfourchette.gitfourchette/current/active/export/bin/org.gitfourchette.gitfourchette;
 	};
 
 	programs.home-manager.enable = true;

@@ -17,6 +17,11 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		gitfourchette = {
+			url = "github:CarlosMendonca/git-fourchette-flake";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		nix-flatpak = {
 			url = "github:gmodena/nix-flatpak/?ref=latest";
 			inputs.nixpkgs.follows = "nixpkgs";

@@ -129,6 +129,7 @@ in {
 		libwebp
 		ffmpeg
 		exiftool
+		inputs.gitfourchette.packages.${pkgs.stdenv.hostPlatform.system}.gitfourchette
 
 		# --- MEDIA ---
 		strawberry
@@ -154,7 +155,6 @@ in {
 	services.flatpak = {
 		enable = true;
 		packages = [
-			"org.gitfourchette.gitfourchette"
 		];
 	};
 
