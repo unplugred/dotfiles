@@ -112,6 +112,7 @@ in {
 		putty
 		chromium
 		direnv
+		openssl
 
 		# --- CREATION ---
 		blender
@@ -149,6 +150,7 @@ in {
 		kdePackages.dolphin
 		kdePackages.ark
 		megasync
+		kristall
 
 	];
 	xdg.portal.enable = true; # for nix-flatpak

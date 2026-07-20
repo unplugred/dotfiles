@@ -145,6 +145,7 @@
 		".config/vlc/vlcrc".source = /home/mel/repos/dotfiles/dotfiles/vlcrc;
 		".config/vlc/vlc-qt-interface.conf".source = /home/mel/repos/dotfiles/dotfiles/vlc-qt-interface.conf;
 		".config/btop/btop.conf".source = /home/mel/repos/dotfiles/dotfiles/btop.conf;
+		".config/kristall/styles/kristall.kthm".source = /home/mel/repos/dotfiles/dotfiles/kristall.kthm;
 		".local/share/sonic-visualiser/Sonic Visualiser/templates/melody.svt".source = /home/mel/repos/dotfiles/dotfiles/sonic-visualiser.svt;
 		".xscreensaver".source = /home/mel/repos/dotfiles/dotfiles/.xscreensaver;
 

@@ -1,0 +1,54 @@
+[General]
+ansi_colors=black, darkred, darkgreen, darkgoldenrod, darkblue, darkmagenta, darkcyan, lightgray, gray, red, green, goldenrod, lightblue, magenta, cyan, white
+background_color=#252525
+blockquote_color=#333233
+margins_h=30
+margins_v=55
+name=kristall
+theme=0
+version=1
+
+[Blockquote]
+color=#d9d9d9
+font="IBM 3270 Nerd Font,12,-1,5,57,0,0,0,0,0,Narrow"
+
+[Formatting]
+centre_h1=true
+indent_bq=1
+indent_h=0
+indent_l=2
+indent_p=1
+indent_size=12
+justify_text=true
+line_height_h=6
+line_height_p=0
+list_symbol=-3
+text_width=900
+text_width_enabled=true
+
+[H1]
+color=#d9d9d9
+font="IBM 3270 Nerd Font,22,-1,5,57,0,0,0,0,0,Narrow"
+
+[H2]
+color=#d9d9d9
+font="IBM 3270 Nerd Font,17,-1,5,57,0,0,0,0,0,Narrow"
+
+[H3]
+color=#d9d9d9
+font="IBM 3270 Nerd Font,14,-1,5,57,0,0,0,0,0,Narrow"
+
+[Link]
+color_cross_scheme=#85add4
+color_external=#add4fb
+color_internal=#add4fb
+external_prefix="=> "
+internal_prefix="-> "
+
+[Preformatted]
+color=#d9d9d9
+font="IBM 3270 Nerd Font,12,-1,5,57,0,0,0,0,0,Narrow"
+
+[Standard]
+color=#d9d9d9
+font="IBM 3270 Nerd Font,12,-1,5,57,0,0,0,0,0,Narrow"
