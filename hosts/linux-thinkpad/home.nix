@@ -149,7 +149,7 @@
 		".local/share/sonic-visualiser/Sonic Visualiser/templates/melody.svt".source = /home/mel/repos/dotfiles/dotfiles/sonic-visualiser.svt;
 		".xscreensaver".source = /home/mel/repos/dotfiles/dotfiles/.xscreensaver;
 
-		".local/share/fonts".source = /home/mel/MEGA/fonts;
+		".local/share/fonts".source = config.lib.file.mkOutOfStoreSymlink /home/mel/MEGA/fonts;
 	};
 
 	programs.home-manager.enable = true;
