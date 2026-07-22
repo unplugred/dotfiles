@@ -101,20 +101,26 @@ in {
 		fastfetch
 		wget
 
-		# --- DEVELOPMENT ---
+		# --- CODE ---
 		kitty
+		direnv
 		git
 		git-lfs
+		inputs.gitfourchette.packages.${pkgs.stdenv.hostPlatform.system}.gitfourchette
 		neovide
 		inputs.calque.packages.${pkgs.stdenv.hostPlatform.system}.default
 		pm2
 		filezilla
 		putty
 		chromium
-		direnv
 		openssl
 
-		# --- CREATION ---
+		# --- AUDIO ---
+		reaper
+		orca-c
+		vmpk
+
+		# --- VISUAL ---
 		blender
 		gimp
 		inkscape
@@ -122,15 +128,11 @@ in {
 		grim
 		flameshot
 		inputs.borderless.packages.${pkgs.stdenv.hostPlatform.system}.default
-		reaper
-		orca-c
-		vmpk
 		fontforge-gtk
 		imagemagick
 		libwebp
 		ffmpeg
 		exiftool
-		inputs.gitfourchette.packages.${pkgs.stdenv.hostPlatform.system}.gitfourchette
 
 		# --- MEDIA ---
 		strawberry
@@ -144,13 +146,13 @@ in {
 		stremio-linux-shell
 
 		# --- OTHER ---
-		zoom-us
-		wineWow64Packages.staging
+		kristall
 		zen-browser
+		zoom-us
+		megasync
+		wineWow64Packages.staging
 		kdePackages.dolphin
 		kdePackages.ark
-		megasync
-		kristall
 
 	];
 	xdg.portal.enable = true; # for nix-flatpak
