@@ -149,6 +149,7 @@ in {
 		mixxx
 		dolphin-emu
 		stremio-linux-shell
+		yt-dlp
 
 		# --- OTHER ---
 		kristall
