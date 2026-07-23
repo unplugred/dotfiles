@@ -89,7 +89,7 @@ in {
 		bluetui
 		playerctl
 		pamixer
-		pavucontrol
+		pwvucontrol
 		qpwgraph
 		#apex-tux #TODO
 
