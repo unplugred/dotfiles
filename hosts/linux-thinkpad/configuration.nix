@@ -95,7 +95,7 @@ in {
 
 		# --- CLI TOOLS ---
 		zsh
-		zsh-powerlevel10k
+		oh-my-posh
 		btop
 		killall
 		tree
@@ -423,12 +423,7 @@ Exec=sway'';
 			"HIST_IGNORE_ALL_DUPS"
 		];
 		promptInit = ''
-			source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-			source ~/.p10k.zsh
-
-			if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-				source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-			fi
+			eval "$(oh-my-posh init zsh --config /home/mel/repos/dotfiles/dotfiles/oh-my-posh.json)"
 		'';
 	};
 	environment.shellAliases.nshell = "nix-shell --run $SHELL";

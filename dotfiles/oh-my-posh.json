@@ -1,0 +1,97 @@
+{
+	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"palette": {
+		"dark": "#252525",
+		"bright": "#4b4b4b",
+		"fg": "#d9d9d9",
+		"accent": "#9a7372",
+		"accent_fg": "#dfdebd",
+		"red": "#d75f87"
+	},
+	"secondary_prompt": {
+		"template": "<,p:fg> > </><p:fg,transparent>\ue0b0</> ",
+		"foreground": "transparent",
+		"background": "transparent"
+	},
+	"transient_prompt": {
+		"template": "<,p:fg> \uea83 {{ .Folder }} </><p:fg,transparent>\ue0b0</> ",
+		"foreground": "transparent",
+		"background": "transparent"
+	},
+	"upgrade": {
+		"source": "cdn",
+		"interval": "24h",
+		"auto": true,
+		"notice": true
+	},
+	"console_title_template": "{{ .Shell }} in {{ .Folder }}",
+	"blocks": [{
+		"type": "prompt",
+		"alignment": "left",
+		"segments": [{
+			"options": {
+				"style": "fish",
+				"dir_length": 4
+			},
+			"template": "{{ path .Path .Location }} ",
+			"foreground": "p:accent_fg",
+			"background": "p:accent",
+			"type": "path",
+			"powerline_symbol": "\ue0b0",
+			"leading_powerline_symbol": "<,p:accent> </>",
+			"style": "powerline"
+		},{
+			"template": " \uf0e7 ",
+			"foreground": "transparent",
+			"powerline_symbol": "\ue0b0",
+			"background": "p:fg",
+			"type": "root",
+			"style": "powerline"
+		},{
+			"options": {
+				"branch_template": "{{ trunc 25 .Branch }}",
+				"fetch_status": true,
+				"fetch_upstream_icon": true
+			},
+			"template": "{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+			"foreground": "p:accent_fg",
+			"powerline_symbol": "\ue0b0",
+			"background": "p:bright",
+			"type": "git",
+			"style": "powerline"
+		},{
+			"options": {
+				"threshold": 1000
+			},
+			"powerline_symbol": "\ue0b0",
+			"template": " {{ .FormattedMs }} ",
+			"foreground": "p:accent_fg",
+			"background": "p:dark",
+			"type": "executiontime",
+			"style": "powerline"
+		},{
+			"powerline_symbol": "\ue0b0",
+			"template": " \uf00d {{ .Code }} ",
+			"foreground": "p:accent_fg",
+			"background": "p:red",
+			"type": "status",
+			"style": "powerline"
+		}]
+	},{
+		"type": "rprompt",
+		"segments": [{
+			"options": {
+				"display_mode": "environment",
+				"fetch_version": false,
+				"fetch_virtual_env": true
+			},
+			"template": "\ue235 {{ .Venv }}",
+			"foreground": "p:fg",
+			"background": "transparent",
+			"type": "python",
+			"style": "plain"
+		}]
+	}],
+	"version": 4,
+	"final_space": true
+}
