@@ -118,6 +118,9 @@ in {
 
 		# --- AUDIO ---
 		reaper
+		reaper-reapack-extension
+		# https://raw.githubusercontent.com/Justin-Johnson/ReJJ/master/index.xml - reeq
+		reaper-sws-extension
 		orca-c
 		vmpk
 		yabridge

@@ -150,6 +150,12 @@
 		".xscreensaver".source = /home/mel/repos/dotfiles/dotfiles/.xscreensaver;
 
 		".local/share/fonts".source = config.lib.file.mkOutOfStoreSymlink /home/mel/MEGA/fonts;
+
+		".config/REAPER/UserPlugins/reaper_reapack-x86_64.so".source = "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
+		".config/REAPER/UserPlugins/reaper_sws-x86_64.so".source = "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
+		".config/REAPER/Scripts/sws_python.py".source = "${pkgs.reaper-sws-extension}/Scripts/sws_python.py";
+		".config/REAPER/Scripts/sws_python64.py".source = "${pkgs.reaper-sws-extension}/Scripts/sws_python64.py";
+		".config/REAPER/Data/Grooves".source = "${pkgs.reaper-sws-extension}/Data/Grooves";
 	};
 
 	programs.home-manager.enable = true;
