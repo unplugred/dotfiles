@@ -59,6 +59,7 @@ in {
 		./hardware-configuration.nix
 		inputs.home-manager.nixosModules.default
 		inputs.nix-flatpak.nixosModules.nix-flatpak
+		inputs.musnix.nixosModules.musnix
 	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -119,6 +120,10 @@ in {
 		reaper
 		orca-c
 		vmpk
+		yabridge
+		yabridgectl
+		wineWow64Packages.yabridge
+		winetricks
 
 		# --- VISUAL ---
 		blender
@@ -255,18 +260,13 @@ Exec=sway'';
 	};
 	security.pam.services.ly.enableGnomeKeyring = true;
 	services.gnome.gnome-keyring.enable = true;
-	security.pam.loginLimits = [{
-		domain = "@users";
-		item = "rtprio";
-		type = "-";
-		value = 1;
-	}];
 	security.polkit.enable = true;
 	users.users.mel = {
 		isNormalUser = true;
 		extraGroups = [
 			"wheel" # sudo
 			"input" # plover
+			"audio" # musnix + yabridge
 		];
 		packages = with pkgs; [ ];
 	};
@@ -292,6 +292,16 @@ Exec=sway'';
 		alsa.support32Bit = true;
 		pulse.enable = true;
 	};
+	#musnix = {
+	#	enable = true;
+	#	#kernel.realtime = true;
+	#};
+	security.pam.loginLimits = [
+		{ domain = "@audio"; item = "memlock"; type = "-"; value = "unlimited"; }
+		{ domain = "@audio"; item = "rtprio"; type = "-"; value = "99"; }
+		{ domain = "@audio"; item = "nofile"; type = "soft"; value = "99999"; }
+		{ domain = "@audio"; item = "nofile"; type = "hard"; value = "99999"; }
+	];
 
 	networking.networkmanager = {
 		enable = true;

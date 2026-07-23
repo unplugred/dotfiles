@@ -27,6 +27,11 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		musnix  = {
+			url = "github:musnix/musnix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		plover-flake = {
 			url = "github:openstenoproject/plover-flake";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -51,6 +56,7 @@
 			modules = [
 				./hosts/linux-thinkpad/configuration.nix
 				inputs.home-manager.nixosModules.default
+				inputs.musnix.nixosModules.musnix
 			];
 		};
 	};
