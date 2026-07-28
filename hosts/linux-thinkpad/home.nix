@@ -55,6 +55,20 @@
 		};
 		colorScheme = "dark";
 		theme.name = "arc-mod";
+		cursorTheme = {
+			name = "Bibata-Original-Classic";
+			size = 16;
+		};
+		gtk3.extraConfig = {
+			"gtk-cursor-theme-name" = "Bibata-Original-Classic";
+			"gtk-cursor-theme-size" = 16;
+		};
+		gtk4.extraConfig = {
+			Settings = ''
+			gtk-cursor-theme-name=Bibata-Original-Classic
+			gtk-cursor-theme-size=16
+			'';
+		};
 	};
 	dconf = {
 		enable = true;
@@ -63,6 +77,13 @@
 			font-name = "IBM 3270 Nerd Font 12";
 			gtk-theme = "arc-mod";
 		};
+	};
+	home.pointerCursor = {
+		gtk.enable = true;
+		x11.enable = true;
+		name = "Bibata-Original-Classic";
+		size = 16;
+		package = pkgs.bibata-cursors;
 	};
 
 	programs.nixcord = {
