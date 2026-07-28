@@ -4,7 +4,7 @@
 		"dark": "#252525",
 		"bright": "#4b4b4b",
 		"fg": "#d9d9d9",
-		"accent": "#9a7372",
+		"accent": "#98bcbd",
 		"accent_fg": "#dfdebd",
 		"red": "#d75f87"
 	},
@@ -34,7 +34,7 @@
 				"dir_length": 4
 			},
 			"template": "{{ path .Path .Location }} ",
-			"foreground": "p:accent_fg",
+			"foreground": "transparent",
 			"background": "p:accent",
 			"type": "path",
 			"powerline_symbol": "\ue0b0",
