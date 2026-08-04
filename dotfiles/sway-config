@@ -110,8 +110,8 @@ client.placeholder      #$col_abg #$col_abg #$col_afg #$col_abg #$col_abg
 client.background       #$col_nbg
 gaps outer 0
 gaps inner 0
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 2
+default_floating_border pixel 2
 smart_gaps on
 smart_borders on
 bar {
@@ -133,8 +133,8 @@ for_window {
 	[window_type="dialog"] floating enable
 
 	[app_id="red.unplug."] floating enable
-	[app_id="calque"] floating enable; border pixel 3
-	[app_id="electron" title="^Calque$"] floating enable; border pixel 3
+	[app_id="calque"] floating enable; border pixel 2
+	[app_id="electron" title="^Calque$"] floating enable; border pixel 2
 	[app_id="pwvucontrol"] floating enable
 	[app_id="wdisplays"] floating enable
 	[app_id="net.sourceforge.VMPK"] floating enable
