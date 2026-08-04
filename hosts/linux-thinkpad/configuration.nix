@@ -164,7 +164,6 @@ in {
 		kdePackages.ark
 
 	];
-	xdg.portal.enable = true; # for nix-flatpak
 	services.flatpak = {
 		enable = true;
 		packages = [
@@ -432,6 +431,19 @@ Exec=sway'';
 	system.userActivationScripts.zshrc = "touch .zshrc";
 	environment.localBinInPath = true;
 
+	xdg.portal = { # for nix-flatpak
+		enable = true;
+		#xdgOpenUsePortal = true;
+		extraPortals = with pkgs; [
+			xdg-desktop-portal-wlr
+			xdg-desktop-portal-gtk
+		];
+		config.common.default = [
+			"wlr"
+			"gtk"
+		];
+		wlr.enable = true;
+	};
 	environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"; #TODO temporary workaround
 
 	nix.gc = {
