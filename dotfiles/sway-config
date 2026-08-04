@@ -75,7 +75,7 @@ bindsym $mod+Shift+e exec "swaynag -t warning -m 'Exit session?' -B 'Exit' 'syst
 exec --no-startup-id xscreensaver --no-splash
 exec --no-startup-id swayidle -w timeout 300 'xscreensaver-command -activate'
 
-bindsym Print exec "flameshot gui"
+bindsym Print exec grim -g \"$(slurp -b 00000088 -c d9d9d9ff -w 1 -d)\" - | wl-copy
 
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
@@ -139,7 +139,6 @@ for_window {
 	[app_id="wdisplays"] floating enable
 	[app_id="net.sourceforge.VMPK"] floating enable
 	[app_id="zen" title="^Picture-in-Picture$"] floating enable, sticky enable
-	[title="^flameshot$"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 	[class="REAPER"] floating enable
 	[class="REAPER" title="REAPER v"] floating disable
 	[app_id="org.openstenoproject.python3"] floating enable

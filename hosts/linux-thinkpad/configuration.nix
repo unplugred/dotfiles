@@ -91,6 +91,9 @@ in {
 		pamixer
 		pwvucontrol
 		qpwgraph
+		grim
+		slurp
+		wl-clipboard
 		#apex-tux #TODO
 
 		# --- CLI TOOLS ---
@@ -133,8 +136,6 @@ in {
 		gimp
 		inkscape
 		naps2
-		grim
-		flameshot
 		inputs.borderless.packages.${pkgs.stdenv.hostPlatform.system}.default
 		fontforge-gtk
 		imagemagick

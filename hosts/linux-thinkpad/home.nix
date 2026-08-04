@@ -158,7 +158,6 @@
 		".config/dunst/dunstrc".source = /home/mel/repos/dotfiles/dotfiles/dunstrc;
 		".config/waybar/config.jsonc".source = /home/mel/repos/dotfiles/dotfiles/waybar-config.jsonc;
 		".config/waybar/style.css".source = /home/mel/repos/dotfiles/dotfiles/waybar-style.css;
-		".config/flameshot/flameshot.ini".source = /home/mel/repos/dotfiles/dotfiles/flameshot.ini;
 		".config/kitty/kitty.conf".source = /home/mel/repos/dotfiles/dotfiles/kitty.conf;
 		".config/Kvantum/KvFlatMod".source = /home/mel/repos/dotfiles/KvFlatMod;
 		".config/dolphinrc".source = /home/mel/repos/dotfiles/dotfiles/dolphinrc;
