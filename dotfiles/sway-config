@@ -15,7 +15,10 @@ set $col_ubg d75f87ff
 set $col_ufg d9d9d9ff
 seat seat0 xcursor_theme Bibata-Original-Classic 16
 
-bindsym $mod+d exec tofi-run --font "$font" --ascii-input true --anchor top --width 100% --height 17 --horizontal true --font-size 12 --prompt-text "" --outline-width 0 --border-width 0 --min-input-width 150 --result-spacing 12 --padding-top 0 --padding-bottom 0 --padding-left 6 --padding-right 0 --selection-background-padding "0,6" --background-color "#$col_nbg" --text-color "#$col_nfg" --selection-background "#$col_sbg" --selection-color "#$col_sfg" | xargs swaymsg exec --
+set $toficmd --font "$font" --ascii-input true --font-size 12 --prompt-text "" --outline-width 0 --border-width 0 --min-input-width 150 --padding-top 0 --padding-bottom 0 --padding-right 0 --background-color "#$col_nbg" --text-color "#$col_nfg" --selection-background "#$col_sbg" --selection-color "#$col_sfg"
+bindsym $mod+d exec tofi-run --anchor top --width 100% --height 17 --horizontal true --result-spacing 12 --padding-left 6 --selection-background-padding "0,6" $toficmd | xargs swaymsg exec --
+
+bindsym $mod+v exec cliphist list | tofi --width 872 --horizontal false --result-spacing 0 --padding-left 0 --selection-background-padding "0,5000" $toficmd | cliphist decode | wl-copy
 
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+f exec dolphin
@@ -72,6 +75,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'Exit session?' -B 'Exit' 'systemctl poweroff' -s "Cancel" -f '$font' --background $col_ubg --text $col_ufg --button-background $col_ubg --button-text $col_ufg --border-bottom-size 0 --message-padding 0 --details-border-size 0 --button-border-size 0 --button-gap 12 --button-dismiss-gap 12 --button-margin-right 12 --button-padding 0"
 
+exec --no-startup-id wl-paste --watch cliphist store
 exec --no-startup-id xscreensaver --no-splash
 exec --no-startup-id swayidle -w timeout 300 'xscreensaver-command -activate'
 

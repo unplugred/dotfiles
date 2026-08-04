@@ -121,6 +121,19 @@
 		};
 	};
 
+	wayland.windowManager.sway.systemd.enable = true;
+	services.cliphist = {
+		enable = true;
+		systemdTargets = ["sway-session.target"];
+		extraOptions = [
+			"-max-dedupe-search"
+			"10"
+			"-max-items"
+			"500"
+		];
+		allowImages = true;
+	};
+
 	programs.vscodium = {
 		enable = true;
 		package = pkgs.vscodium.fhs;
