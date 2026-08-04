@@ -72,6 +72,7 @@ in {
 		swayidle
 		waybar
 		tofi
+		rofimoji
 		dunst
 		xscreensaver
 		kdePackages.qtsvg
