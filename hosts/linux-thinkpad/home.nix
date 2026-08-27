@@ -53,21 +53,12 @@
 			name = "IBM 3270 Nerd Font";
 			size = 12;
 		};
-		colorScheme = "dark";
 		theme.name = "arc-mod";
+		iconTheme.name = "Suru++-Aspr\\xf3mauros";
+		colorScheme = "dark";
 		cursorTheme = {
 			name = "Bibata-Original-Classic";
 			size = 16;
-		};
-		gtk3.extraConfig = {
-			"gtk-cursor-theme-name" = "Bibata-Original-Classic";
-			"gtk-cursor-theme-size" = 16;
-		};
-		gtk4.extraConfig = {
-			Settings = ''
-			gtk-cursor-theme-name=Bibata-Original-Classic
-			gtk-cursor-theme-size=16
-			'';
 		};
 	};
 	dconf = {
