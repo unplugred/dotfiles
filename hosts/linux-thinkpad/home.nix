@@ -134,33 +134,41 @@
 		allowImages = true;
 	};
 
-	programs.vscodium = {
+	programs.vscode = {
 		enable = true;
-		package = pkgs.vscodium.fhs;
+		package = pkgs.vscode.fhsWithPackages(ps: with ps; [
+			pkg-config
+			gcc
+		]);
 		profiles.default = {
 			extensions = with pkgs.vscode-extensions; [
 				vscodevim.vim
+				ms-vscode.cmake-tools
+				ms-vscode.cpptools
 			];
 			userSettings = {
 				chat.disableAIFeatures = true;
 				vim.enableNeovim = true;
+				editor.fontFamily = "IBM 3270 Nerd Font";
+				debug.console.fontSize = 16;
 				editor.fontSize = 16;
+				editor.minimap.sectionHeaderFontSize = 16;
+				terminal.integrated.fontSize = 16;
 				workbench.sideBar.experimental.fontSize = 16;
 				workbench.statusBar.experimental.fontSize = 16;
 				workbench.tabs.experimental.fontSize = 16;
 				workbench.experimental.fontSize = 16;
-				debug.console.fontSize = 16;
-				terminal.integrated.fontSize = 16;
-				editor.lineHeight = 1;
 				debug.console.lineHeight = 1;
+				editor.lineHeight = 1;
 				terminal.integrated.lineHeight = 1;
+				editor.fontLigatures = true;
 				terminal.integrated.fontLigatures.enabled = true;
 				editor.renderWhitespace = "all";
-				editor.cursorSmoothCaretAnimation = true;
+				editor.cursorSmoothCaretAnimation = "on";
 				editor.smoothScrolling = true;
 				terminal.integrated.smoothScrolling = true;
-				editor.roundedSelection = false;
 				workbench.shadows = false;
+				editor.roundedSelection = false;
 			};
 		};
 	};
