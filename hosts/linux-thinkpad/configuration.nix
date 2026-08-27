@@ -164,6 +164,8 @@ in {
 		wineWow64Packages.staging
 		kdePackages.dolphin
 		kdePackages.ark
+		libreoffice
+		hunspellDicts.he-il
 
 	];
 	services.flatpak = {
