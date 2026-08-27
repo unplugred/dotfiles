@@ -229,6 +229,9 @@ aunmenu PopUp.-1-
 let g:neovide_remember_window_size=v:true
 let g:neovide_hide_mouse_when_typing=v:true
 let g:neovide_theme='dark'
+let g:neovide_progress_bar_height = 2
+let g:neovide_progress_bar_animation_speed = 15000
+let g:neovide_progress_bar_hide_delay = 0
 
 " particles dont judge
 let g:neovide_cursor_vfx_mode="pixiedust"
