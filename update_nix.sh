@@ -9,4 +9,3 @@ sudo nixos-rebuild switch --flake /home/mel/repos/dotfiles#linux-thinkpad --impu
 sudo nix-collect-garbage -d
 nix-collect-garbage -d
 nix-store --optimise
-sudo nixos-rebuild switch --flake /home/mel/repos/dotfiles#linux-thinkpad --impure
