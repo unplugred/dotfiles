@@ -22,7 +22,7 @@ OS2Version: 4
 OS2_WeightWidthSlopeOnly: 1
 OS2_UseTypoMetrics: 1
 CreationTime: 1306332354
-ModificationTime: 1785860770
+ModificationTime: 1789283845
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -810,8 +810,8 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 1419 11 15
-BeginChars: 1114363 5431
+WinInfo: 1114288 8 10
+BeginChars: 1114363 5434
 
 StartChar: .notdef
 Encoding: 1114112 -1 0
@@ -748552,7 +748552,7 @@ EndChar
 StartChar: uni05D9
 Encoding: 1497 1497 5412
 Width: 488
-Flags: WO
+Flags: W
 HStem: 417 59<157 213>
 VStem: 234 60<237 395>
 LayerCount: 2
@@ -749116,6 +749116,48 @@ SplineSet
  130 95 l 1,0,-1
 EndSplineSet
 Validated: 3073
+EndChar
+
+StartChar: slash_asterisk
+Encoding: 1114337 -1 5431
+Width: 976
+Flags: W
+HStem: 458 20G<685 746>
+VStem: 685 61<50 234 294 478>
+LayerCount: 2
+Fore
+Refer: 43 42 N 1 0 0 1 448 -120 2
+Refer: 48 47 S 1 0 0 1 40 0 2
+LCarets2: 1 0
+Ligature2: "'liga' Standard Ligatures lookup 0-1" glyph48 glyph43
+EndChar
+
+StartChar: asterisk_slash
+Encoding: 1114338 -1 5432
+Width: 976
+Flags: W
+HStem: 578 20G<277 338>
+VStem: 277 61<170 354 414 598>
+LayerCount: 2
+Fore
+Refer: 48 47 S 1 0 0 1 448 0 2
+Refer: 43 42 N 1 0 0 1 40 0 2
+Ligature2: "'liga' Standard Ligatures lookup 0-1" glyph43 glyph48
+EndChar
+
+StartChar: slash_asterisk_slash
+Encoding: 1114339 -1 5433
+Width: 1464
+Flags: WO
+HStem: 511 20G<725 786>
+VStem: 725 61<103 287 347 531>
+LayerCount: 2
+Fore
+Refer: 48 47 N 1 0 0 1 936 0 2
+Refer: 43 42 N 1 0 0 1 488 -67 2
+Refer: 48 47 N 1 0 0 1 40 0 2
+LCarets2: 2 0 0
+Ligature2: "'liga' Standard Ligatures lookup 0-1" glyph48 glyph43 glyph48
 EndChar
 EndChars
 EndSplineFont
