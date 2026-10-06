@@ -1,0 +1,7 @@
+[screencast]
+output_name=
+max_fps=30
+exec_before=dunstctl set-paused true
+exec_after=dunstctl set-paused false
+chooser_type=simple
+chooser_cmd=slurp -b 00000088 -c d9d9d9ff -f '%o' -o

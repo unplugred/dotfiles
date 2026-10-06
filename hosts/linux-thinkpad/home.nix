@@ -181,6 +181,7 @@
 		".config/kristall/styles/kristall.kthm".source = /home/mel/repos/dotfiles/dotfiles/kristall.kthm;
 		".local/share/sonic-visualiser/Sonic Visualiser/templates/melody.svt".source = /home/mel/repos/dotfiles/dotfiles/sonic-visualiser.svt;
 		".xscreensaver".source = /home/mel/repos/dotfiles/dotfiles/.xscreensaver;
+		".config/xdg-desktop-portal-wlr/config".source = /home/mel/repos/dotfiles/dotfiles/xdg-desktop-portal-wlr;
 
 		".local/share/fonts".source = config.lib.file.mkOutOfStoreSymlink /home/mel/MEGA/fonts;
 

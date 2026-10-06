@@ -169,3 +169,5 @@ for_window {
 	[class="FM+" instance="FM+"] floating enable
 	[class="Proto" instance="Proto"] floating enable
 }
+
+include @sysconfdir@/sway/config.d/*

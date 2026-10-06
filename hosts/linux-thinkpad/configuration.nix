@@ -361,6 +361,7 @@ Exec=sway'';
 		QT_STYLE_OVERRIDE = "kvantum";
 		QT_QPA_PLATFORM = "wayland";
 		XDG_CURRENT_DESKTOP = "sway";
+		XDG_CONFIG_HOME = "/home/mel/.config";
 		EDITOR = "nvim";
 		VISUAL = "neovide";
 	};
@@ -437,12 +438,14 @@ Exec=sway'';
 
 	xdg.portal = { # for nix-flatpak
 		enable = true;
-		#xdgOpenUsePortal = true;
+		xdgOpenUsePortal = true;
 		extraPortals = with pkgs; [
+			xdg-desktop-portal-luminous
 			xdg-desktop-portal-wlr
 			xdg-desktop-portal-gtk
 		];
 		config.common.default = [
+			"luminous"
 			"wlr"
 			"gtk"
 		];
