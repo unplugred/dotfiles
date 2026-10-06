@@ -15,9 +15,14 @@ let
 					"zen.welcome-screen.seen" = true;
 					"browser.preferences.config_warning.warningPasswordManager.dismissed" = true;
 					"browser.preferences.config_warning.warningSafeBrowsing.dismissed" = true;
+					"signon.autofillForms" = false;
+					"signon.rememberSignons" = false;
+					"services.sync.declinedEngines" = "passwords";
+					"services.sync.engine.passwords" = false;
 					"browser.translations.automaticallyPopup" = false;
 
 					"zen.theme.accent-color" = "#9a7372";
+					"zen.view.window.scheme" = 0;
 					"zen.theme.gradient.show-custom-colors" = true;
 					"zen.widget.linux.transparency" = true;
 					"zen.view.grey-out-inactive-windows" = false;
@@ -48,8 +53,11 @@ let
 			extraPolicies = {
 				DisableTelemetry = true;
 				ExtensionSettings = builtins.listToAttrs [
+					(extension "betterttv" "firefox@betterttv.net")
 					(extension "lastpass-password-manager" "support@lastpass.com")
+					(extension "open-graph-preview-and-debug" "{6e262423-d612-4f29-be6e-e83aa641645d}")
 					(extension "styl-us" "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}")
+					(extension "untrap-for-youtube" "{2662ff67-b302-4363-95f3-b050218bd72c}")
 				];
 				SearchEngines.Default = "ddg";
 			};
