@@ -1,8 +1,144 @@
 { config, pkgs, inputs, ... }:
-{
+let
+	extension = shortId: guid: {
+		name = guid;
+		value = {
+			install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+			installation_mode = "normal_installed";
+		};
+	};
+in {
 	imports = [
 		inputs.nixcord.homeModules.nixcord
+		inputs.zen-browser.homeModules.beta
 	];
+
+	programs.zen-browser = {
+		enable = true;
+		setAsDefaultBrowser = true;
+		policies = {
+			AutofillAddressEnabled = false;
+			AutofillCreditCardEnabled = false;
+			DisableFeedbackCommands = true;
+			DisableFirefoxStudies = true;
+			DisablePocket = true;
+			DisableTelemetry = true;
+			DontCheckDefaultBrowser = true;
+			NoDefaultBookmarks = true;
+			OfferToSaveLogins = false;
+			EnableTrackingProtection = {
+				Value = true;
+				Locked = true;
+				Cryptomining = true;
+				Fingerprinting = true;
+			};
+			ExtensionSettings = builtins.listToAttrs [
+				(extension "betterttv" "firefox@betterttv.net")
+				(extension "lastpass-password-manager" "support@lastpass.com")
+				(extension "open-graph-preview-and-debug" "{6e262423-d612-4f29-be6e-e83aa641645d}")
+				(extension "styl-us" "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}")
+				(extension "untrap-for-youtube" "{2662ff67-b302-4363-95f3-b050218bd72c}")
+				(extension "ublock-origin" "uBlock0@raymondhill.net")
+			];
+		};
+		profiles.default = {
+			search = {
+				force = true;
+				default = "ddg";
+			};
+			settings = {
+				"zen.welcome-screen.seen" = true;
+				"browser.preferences.config_warning.warningPasswordManager.dismissed" = true;
+				"browser.preferences.config_warning.warningSafeBrowsing.dismissed" = true;
+				"signon.autofillForms" = false;
+				"signon.rememberSignons" = false;
+				"services.sync.declinedEngines" = "passwords";
+				"services.sync.engine.passwords" = false;
+				"browser.translations.automaticallyPopup" = false;
+
+				"zen.theme.accent-color" = "#9a7372";
+				"zen.view.window.scheme" = 0;
+				"zen.theme.gradient.show-custom-colors" = true;
+				"zen.widget.linux.transparency" = true;
+				"zen.view.grey-out-inactive-windows" = false;
+				"browser.tabs.allow_transparent_browser" = true;
+
+				"sidebar.visibility" = "hide-sidebar";
+				"zen.theme.content-element-separation" = 0;
+				"zen.theme.border-radius" = 0;
+				"zen.view.compact.enable-at-startup" = true;
+				"zen.view.compact.hide-tabbar" = true;
+				"zen.view.compact.hide-toolbar" = true;
+				"zen.view.sidebar-expanded" = false;
+
+				"font.name.monospace.x-western" = "IBM 3270 Nerd Font";
+				"font.name.sans-serif.x-western" = "IBM 3270 Nerd Font";
+				"font.name.serif.x-western" = "IBM 3270 Nerd Font";
+				"media.videocontrols.picture-in-picture.display-text-tracks.size" = "small";
+				"font.minimum-size.x-western" = 16;
+				"font.size.variable.x-western" = 16;
+				"font.size.monospace.x-western" = 16;
+
+				#TODO stylus theme
+			};
+			spacesForce = true;
+			spaces = {
+				"mel" = {
+					id = "c6de089c-410d-4206-961d-ab11f988d40a";
+					position = 1000;
+					theme = {
+						type = "gradient";
+						colors = [{
+							red = 0;
+							green = 0;
+							blue = 0;
+							algorithm = "floating";
+							type = "explicit-lightness";
+							lightness = 0;
+						}];
+						opacity = 0.9;
+						texture = 0.0;
+					};
+				};
+			};
+			pinsForce = true;
+			pins = {
+				"WhatsApp" = {
+					id = "5e8db6a4-92c7-4f31-8a60-1b9f3ce47d28";
+					url = "https://web.whatsapp.com/";
+					position = 100;
+					isEssential = true;
+				};
+				"Keep" = {
+					id = "cdd10fab-4fc5-494b-9041-325e5759195b";
+					url = "https://keep.google.com/";
+					position = 200;
+					isEssential = true;
+				};
+				"Mail" = {
+					id = "78aabdad-8aae-4fe0-8ff0-2a0c6c4ccc24";
+					url = "https://mail.proton.me/u/0/";
+					position = 300;
+					isEssential = true;
+				};
+				"Calendar" = {
+					id = "d85a9026-1458-4db6-b115-346746bcc692";
+					url = "https://calendar.proton.me/u/0/";
+					position = 400;
+					isEssential = true;
+				};
+				"Metrics" = {
+					id = "f8dd784e-11d7-430a-8f57-7b05ecdb4c77";
+					url = "https://vst.unplug.red/metrics";
+					position = 500;
+					isEssential = true;
+				};
+			};
+			extensionButtons = {
+				"nav-bar" = [ "support@lastpass.com" ];
+			};
+		};
+	};
 
 	home.packages = [ ];
 	nixpkgs.config.allowUnfree = true;

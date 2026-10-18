@@ -26,7 +26,7 @@ bindsym $mod+Period exec rofimoji --selector "tofi" --selector-args ' $tofivert'
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+f exec dolphin
 bindsym $mod+Shift+n exec neovide
-bindsym $mod+Shift+z exec zen
+bindsym $mod+Shift+z exec zen-beta
 bindsym $mod+Shift+c exec calque --no-sandbox
 
 bindsym $mod+$left focus left

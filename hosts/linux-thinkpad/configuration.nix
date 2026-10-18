@@ -1,68 +1,5 @@
 { config, lib, pkgs, inputs, ... }:
-let
-	extension = shortId: guid: {
-		name = guid;
-		value = {
-			install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
-			installation_mode = "normal_installed";
-		};
-	};
-	zen-browser = pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped {
-			extraPrefs = lib.concatLines(
-				lib.mapAttrsToList(
-					name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
-				){
-					"zen.welcome-screen.seen" = true;
-					"browser.preferences.config_warning.warningPasswordManager.dismissed" = true;
-					"browser.preferences.config_warning.warningSafeBrowsing.dismissed" = true;
-					"signon.autofillForms" = false;
-					"signon.rememberSignons" = false;
-					"services.sync.declinedEngines" = "passwords";
-					"services.sync.engine.passwords" = false;
-					"browser.translations.automaticallyPopup" = false;
-
-					"zen.theme.accent-color" = "#9a7372";
-					"zen.view.window.scheme" = 0;
-					"zen.theme.gradient.show-custom-colors" = true;
-					"zen.widget.linux.transparency" = true;
-					"zen.view.grey-out-inactive-windows" = false;
-					"browser.tabs.allow_transparent_browser" = true;
-					#TODO set theme color to #191819f2
-
-					"sidebar.visibility" = "hide-sidebar";
-					"zen.theme.content-element-separation" = 0;
-					"zen.theme.border-radius" = 0;
-					"zen.view.compact.enable-at-startup" = true;
-					"zen.view.compact.hide-tabbar" = true;
-					"zen.view.compact.hide-toolbar" = true;
-					"zen.view.sidebar-expanded" = false;
-
-					"font.name.monospace.x-western" = "IBM 3270 Nerd Font";
-					"font.name.sans-serif.x-western" = "IBM 3270 Nerd Font";
-					"font.name.serif.x-western" = "IBM 3270 Nerd Font";
-					"media.videocontrols.picture-in-picture.display-text-tracks.size" = "small";
-					"font.minimum-size.x-western" = 16;
-					"font.size.variable.x-western" = 16;
-					"font.size.monospace.x-western" = 16;
-
-					#TODO add mail, calendar, whatsapp, keep, stats
-					#TODO stylus theme
-				}
-			);
-
-			extraPolicies = {
-				DisableTelemetry = true;
-				ExtensionSettings = builtins.listToAttrs [
-					(extension "betterttv" "firefox@betterttv.net")
-					(extension "lastpass-password-manager" "support@lastpass.com")
-					(extension "open-graph-preview-and-debug" "{6e262423-d612-4f29-be6e-e83aa641645d}")
-					(extension "styl-us" "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}")
-					(extension "untrap-for-youtube" "{2662ff67-b302-4363-95f3-b050218bd72c}")
-				];
-				SearchEngines.Default = "ddg";
-			};
-	};
-in {
+{
 	imports = [
 		./hardware-configuration.nix
 		inputs.home-manager.nixosModules.default
@@ -167,7 +104,6 @@ in {
 
 		# --- OTHER ---
 		kristall
-		zen-browser
 		zoom-us
 		megasync
 		wineWow64Packages.staging
