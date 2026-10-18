@@ -217,7 +217,6 @@ Exec=sway'';
 		isNormalUser = true;
 		extraGroups = [
 			"wheel" # sudo
-			"input" # plover
 			"audio" # musnix + yabridge
 		];
 		packages = with pkgs; [ ];
@@ -265,10 +264,6 @@ Exec=sway'';
 	networking.dhcpcd.enable = false;
 	networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
 	services.openssh.enable = true;
-
-	services.udev.extraRules = ''
-		KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
-	''; # plover fix
 
 	services.udisks2.enable = true;
 	fileSystems."/mnt/nvme0n1p3".options = [ "uid=1000" ];
