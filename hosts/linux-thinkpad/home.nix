@@ -2,7 +2,6 @@
 {
 	imports = [
 		inputs.nixcord.homeModules.nixcord
-		inputs.plover-flake.homeManagerModules.plover
 	];
 
 	home.packages = [ ];
@@ -91,24 +90,6 @@
 				noF1.enable = true;
 				noTypingAnimation.enable = true;
 			};
-		};
-	};
-
-	programs.plover = {
-		enable = true;
-		package = inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover.withPlugins (
-			ps: with ps; [
-				plover-lapwing-aio
-				plover-console-ui
-			]
-		);
-
-		settings = {
-			"Machine Configuration" = {
-				machine_type = "Keyboard";
-				auto_start = true;
-			};
-			"System".name = "Lapwing";
 		};
 	};
 

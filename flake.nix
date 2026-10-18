@@ -32,11 +32,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		plover-flake = {
-			url = "github:openstenoproject/plover-flake";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		calque = {
 			url = "github:unplugred/calque-desktop";
 			inputs.nixpkgs.follows = "nixpkgs";
