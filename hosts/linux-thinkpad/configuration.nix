@@ -67,10 +67,8 @@
 		openssl
 
 		# --- AUDIO ---
-		reaper
-		reaper-reapack-extension
-		# https://raw.githubusercontent.com/Justin-Johnson/ReJJ/master/index.xml - reeq
-		reaper-sws-extension
+		vital
+		surge-xt
 		orca-c
 		vmpk
 		yabridge

@@ -32,6 +32,11 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		reaper-flake = {
+			url = "github:9Prestidigitator/reaper-flake";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		calque = {
 			url = "github:unplugred/calque-desktop";
 			inputs.nixpkgs.follows = "nixpkgs";

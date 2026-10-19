@@ -11,6 +11,7 @@ in {
 	imports = [
 		inputs.nixcord.homeModules.nixcord
 		inputs.zen-browser.homeModules.beta
+		inputs.reaper-flake.homeModules.reaper
 	];
 
 	programs.zen-browser = {
@@ -155,6 +156,8 @@ in {
 
 	home.username = "mel";
 	home.homeDirectory = "/home/mel";
+	home.stateVersion = "26.05";
+	programs.home-manager.enable = true;
 
 	qt = {
 		enable = true;
@@ -290,6 +293,32 @@ in {
 		};
 	};
 
+	programs.reaper = {
+		enable = true;
+		extensions = {
+			reapack = {
+				enable = true;
+				addDefaultRepositories = true;
+				repositories = [{
+					name = "Bird-Bird";
+					url = "https://github.com/Bird-Bird/ReaScript_Testing/raw/main/index.xml";
+					installNewPackages = "always";
+				} {
+					name = "ReJJ";
+					url = "https://raw.githubusercontent.com/Justin-Johnson/ReJJ/master/index.xml";
+					installNewPackages = "always";
+				}];
+				synchronizeOnActivation = true;
+			};
+			sws.enable = true;
+		};
+
+		preferences = {
+			general.startupSettings.showSplashScreenOnStartup = false;
+			plugIns.reascript.python.enable = true;
+		};
+	};
+
 	home.file = {
 		".config/sway/config".source = /home/mel/repos/dotfiles/dotfiles/sway-config;
 		".local/share/nvim/plugged/vim-airline/autoload/airline/themes/meltheme.vim".source = /home/mel/repos/dotfiles/dotfiles/airline-theme.vim;
@@ -308,16 +337,6 @@ in {
 		".local/share/sonic-visualiser/Sonic Visualiser/templates/melody.svt".source = /home/mel/repos/dotfiles/dotfiles/sonic-visualiser.svt;
 		".xscreensaver".source = /home/mel/repos/dotfiles/dotfiles/.xscreensaver;
 		".config/xdg-desktop-portal-wlr/config".source = /home/mel/repos/dotfiles/dotfiles/xdg-desktop-portal-wlr;
-
 		".local/share/fonts".source = config.lib.file.mkOutOfStoreSymlink /home/mel/fonts;
-
-		".config/REAPER/UserPlugins/reaper_reapack-x86_64.so".source = "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
-		".config/REAPER/UserPlugins/reaper_sws-x86_64.so".source = "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
-		".config/REAPER/Scripts/sws_python.py".source = "${pkgs.reaper-sws-extension}/Scripts/sws_python.py";
-		".config/REAPER/Scripts/sws_python64.py".source = "${pkgs.reaper-sws-extension}/Scripts/sws_python64.py";
-		".config/REAPER/Data/Grooves".source = "${pkgs.reaper-sws-extension}/Data/Grooves";
 	};
-
-	programs.home-manager.enable = true;
-	home.stateVersion = "26.05";
 }
