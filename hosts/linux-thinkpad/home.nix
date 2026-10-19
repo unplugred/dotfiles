@@ -81,6 +81,15 @@ in {
 
 				#TODO stylus theme
 			};
+			userChrome = ''
+				:root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
+					& #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
+						& browser[transparent="true"] {
+							background: none !important;
+						}
+					}
+				}
+			'';
 			spacesForce = true;
 			spaces = {
 				"mel" = {
@@ -300,7 +309,7 @@ in {
 		".xscreensaver".source = /home/mel/repos/dotfiles/dotfiles/.xscreensaver;
 		".config/xdg-desktop-portal-wlr/config".source = /home/mel/repos/dotfiles/dotfiles/xdg-desktop-portal-wlr;
 
-		".local/share/fonts".source = config.lib.file.mkOutOfStoreSymlink /home/mel/MEGA/fonts;
+		".local/share/fonts".source = config.lib.file.mkOutOfStoreSymlink /home/mel/fonts;
 
 		".config/REAPER/UserPlugins/reaper_reapack-x86_64.so".source = "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
 		".config/REAPER/UserPlugins/reaper_sws-x86_64.so".source = "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
