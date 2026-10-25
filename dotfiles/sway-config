@@ -88,6 +88,7 @@ exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSO
 
 exec --no-startup-id dunst
 
+# free palestine
 input "type:keyboard" {
 	xkb_layout us,il
 	xkb_options grp:alt_shift_toggle,grp_led:scroll

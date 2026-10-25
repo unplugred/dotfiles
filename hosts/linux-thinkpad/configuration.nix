@@ -108,7 +108,7 @@
 		kdePackages.dolphin
 		kdePackages.ark
 		libreoffice
-		hunspellDicts.he-il
+		hunspellDicts.he-il # free palestine
 
 	];
 	services.flatpak = {
@@ -185,7 +185,7 @@
 		efi.canTouchEfiVariables = true;
 	};
 	networking.hostName = "linux-thinkpad";
-	time.timeZone = "Turkey";
+	time.timeZone = "EET";
 
 	environment.etc."ly/custom-sessions/sway.desktop".text = ''
 [Desktop Entry]
