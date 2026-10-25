@@ -28,7 +28,7 @@
 		qt6.qtwayland
 		qt6Packages.qt6ct
 		adwaita-icon-theme
-		openrgb
+		#openrgb
 
 		# --- IO ---
 		brightnessctl
@@ -233,7 +233,7 @@ Exec=sway'';
 	services.udev.packages = [ pkgs.dolphin-emu ];
 
 	#services.printing.enable = true;
-	services.hardware.openrgb.enable = true;
+	#services.hardware.openrgb.enable = true;
 
 	security.rtkit.enable = true;
 	services.pipewire = {
