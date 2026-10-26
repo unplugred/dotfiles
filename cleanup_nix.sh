@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo nix-collect-garbage -d
+nix-collect-garbage -d
+nix-store --optimise
